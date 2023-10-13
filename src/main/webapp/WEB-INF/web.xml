@@ -183,6 +183,34 @@
   	<servlet-name>AddDsertToShoppingCart</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.AddDsertToShoppingCart</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>AddDrinkToShoppingCart</display-name>
+  	<servlet-name>AddDrinkToShoppingCart</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.AddDrinkToShoppingCart</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>AddDrinksToShoppingCart</display-name>
+  	<servlet-name>AddDrinksToShoppingCart</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.AddDrinksToShoppingCart</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>AddMainCourseToShoppingCart</display-name>
+  	<servlet-name>AddMainCourseToShoppingCart</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.AddMainCourseToShoppingCart</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>AddMainCoursesToShoppingCart</display-name>
+  	<servlet-name>AddMainCoursesToShoppingCart</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.AddMainCoursesToShoppingCart</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
@@ -303,6 +331,22 @@
   <servlet-mapping>
   	<servlet-name>AddDsertToShoppingCart</servlet-name>
   	<url-pattern>/AddDsertToShoppingCart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddDrinkToShoppingCart</servlet-name>
+  	<url-pattern>/AddDrinkToShoppingCart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddDrinksToShoppingCart</servlet-name>
+  	<url-pattern>/AddDrinksToShoppingCart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddMainCourseToShoppingCart</servlet-name>
+  	<url-pattern>/AddMainCourseToShoppingCart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddMainCoursesToShoppingCart</servlet-name>
+  	<url-pattern>/AddMainCoursesToShoppingCart</url-pattern>
   </servlet-mapping>
   
 </web-app>
