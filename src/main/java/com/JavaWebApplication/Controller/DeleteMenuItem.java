@@ -1,0 +1,61 @@
+package com.JavaWebApplication.Controller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.JavaWebApplication.Beans.MenuItem;
+import com.JavaWebApplication.Model.DataHandlerMenuItem;
+
+/**
+ * Servlet implementation class DeleteMenuItem
+ */
+public class DeleteMenuItem extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public DeleteMenuItem() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+		boolean deleted;
+		RequestDispatcher d1;
+		int MenuItemId=Integer.parseInt(request.getParameter("MenuItemId"));
+		MenuItem mi=new MenuItem();
+		mi.setMenuItemID(MenuItemId);
+		DataHandlerMenuItem DHMI=new DataHandlerMenuItem();
+		deleted=DHMI.deletemenuitem(MenuItemId);
+		if(deleted) {
+			request.setAttribute("delete", "success");
+			d1=request.getRequestDispatcher("DeleteMenuItem.jsp");
+		}
+		else {
+			request.setAttribute("delete", "error");
+			d1=request.getRequestDispatcher("DeleteMenuItem.jsp");
+		}
+		d1.forward(request, response);
+		
+	}
+
+}
