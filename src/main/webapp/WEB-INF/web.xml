@@ -169,6 +169,20 @@
   	<servlet-name>SearchApps</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.SearchApps</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>AdditemToShoppingCart</display-name>
+  	<servlet-name>AdditemToShoppingCart</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.AdditemToShoppingCart</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>AddDsertToShoppingCart</display-name>
+  	<servlet-name>AddDsertToShoppingCart</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.AddDsertToShoppingCart</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
@@ -281,6 +295,14 @@
   <servlet-mapping>
   	<servlet-name>SearchApps</servlet-name>
   	<url-pattern>/SearchApps</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AdditemToShoppingCart</servlet-name>
+  	<url-pattern>/AdditemToShoppingCart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddDsertToShoppingCart</servlet-name>
+  	<url-pattern>/AddDsertToShoppingCart</url-pattern>
   </servlet-mapping>
   
 </web-app>

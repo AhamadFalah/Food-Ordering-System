@@ -233,6 +233,9 @@ body{
 
 </head>
 <body>
+<input type="hidden" id="update" value="<%=request.getAttribute("update")%>">
+<input type="hidden" id="present" value="<%=request.getAttribute("present")%>">
+<% String userID = (String) session.getAttribute("id"); %>
 <input type="hidden" id="search" value="<%=request.getAttribute("search")%>">
 <div class="Origianl_header">
 
@@ -298,7 +301,15 @@ body{
         <c:set var="MenuItemName" value="${MenuItem.getMenuItemName()}"/>
         <c:set var="MenuItemPrice" value="${MenuItem.getMenuItemPrice()}"/>
         <c:set var="MenuItemUploadPath" value="${MenuItem.getMenuItemImageUrl()}"/>
-
+        
+         <c:url value="http://localhost:8080/JAVAWebApplication/AddDsertToShoppingCart" var="itemToShoppingCart">
+         	<c:param name="UserID" value="<%=userID%>"/>
+         	<c:param name="id" value="${MenuItemID}"/>
+         	<c:param name="MenuItemCategory" value="${MenuItemCategory}"/>
+         	<c:param name="MenuItemName" value="${MenuItemName}"/>
+         	<c:param name="MenuItemPrice" value="${MenuItemPrice}"/>
+         </c:url>
+         
    <div class="preview " data-target="p-${MenuItem.getMenuItemID()}">
       <i class="fas fa-times"></i>
          <img src="${MenuItem.getMenuItemImageUrl()}" alt="" height="300px" width="300px">
@@ -307,7 +318,7 @@ body{
       <div class="price">${MenuItem.getMenuItemPrice()}</div>
       <div class="buttons">
          <a href="#" class="buy">buy now</a>
-         <a href="#" class="cart">add to cart</a>
+         <a href="${itemToShoppingCart}" class="cart">add to cart</a>
       </div>
    </div>
 </c:forEach>
@@ -329,7 +340,19 @@ if(search=="error"){
 }
 </script>
 
+<script type="text/javascript">
+let update=document.getElementById("update").value;
+if(update=="success"){
+	swal("Item Added Successfully To The Cart","","success");
+}
+</script>
 
+<script type="text/javascript">
+let present=document.getElementById("present").value;
+if(present=="success"){
+	swal("Item Present In The Cart","","error");
+}
+</script>
 
 </body>
 </html>
