@@ -211,6 +211,13 @@
   	<servlet-name>AddMainCoursesToShoppingCart</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.AddMainCoursesToShoppingCart</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ListAllCartDetails</display-name>
+  	<servlet-name>ListAllCartDetails</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ListAllCartDetails</servlet-class>
+  </servlet>
   
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
@@ -347,6 +354,10 @@
   <servlet-mapping>
   	<servlet-name>AddMainCoursesToShoppingCart</servlet-name>
   	<url-pattern>/AddMainCoursesToShoppingCart</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListAllCartDetails</servlet-name>
+  	<url-pattern>/ListAllCartDetails</url-pattern>
   </servlet-mapping>
   
 </web-app>

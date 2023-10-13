@@ -2,10 +2,6 @@
 <% 
 Boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
 %>
-
-
-
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />

@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.JavaWebApplication.Beans.Cart;
 
@@ -48,6 +50,41 @@ public class DataHandlerCart {
 			e.printStackTrace();
 		}
 		return rs;
+		
+	}
+	
+	//Select all the cart details
+	public List<Cart> SelectAllCartdetails(int userID){
+		List<Cart>CartList=new ArrayList<>();
+		MyDB db=new MyDB();
+		ResultSet rs=null;
+		Connection con=db.getCon();
+		try {
+			PreparedStatement stmt=con.prepareStatement("SELECT * FROM cart WHERE User_ID=?");
+			stmt.setInt(1, userID);
+			rs=stmt.executeQuery();
+			while(rs.next()) {
+				int cartID=rs.getInt("CartID");
+				int menuID=rs.getInt("Menu_Item_ID");
+				String menuItemName=rs.getString("MenuName");
+				String Catagory=rs.getString("Catagory");
+				double price=rs.getDouble("Price");
+				int quantity=rs.getInt("Quantity");
+				Cart c=new Cart();
+				c.setMenuItemID(menuID);
+				c.setMenuItemName(menuItemName);
+				c.setMenuItemCategory(Catagory);
+				c.setQuantity(quantity);
+				c.setMenuItemPrice(price);
+				c.setCardID(cartID);
+				CartList.add(c);
+			}
+			return CartList;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return CartList;
 		
 	}
 

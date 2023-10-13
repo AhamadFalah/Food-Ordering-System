@@ -4,7 +4,9 @@
     uri="http://java.sun.com/jsp/jstl/core" 
 %>
 
-
+<% 
+Boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
+%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -315,11 +317,14 @@ body{
       <i class="fas fa-times"></i>
       <img src="${MenuItem.getMenuItemImageUrl()}" alt="" height="300px" width="300px">
       <h3>${MenuItem.getMenuItemName()}</h3>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
       <div class="price">${MenuItem.getMenuItemPrice()}</div>
       <div class="buttons">
          <a href="#" class="buy">buy now</a>
+         <% if (loggedIn != null && loggedIn) { %>
          <a href="${AddMainCoursesToShoppingCart}" class="cart">add to cart</a>
+              <% } else { %>
+         <a href="Login.jsp" class="cart">add to cart</a>
+              <% } %>
       </div>
    </div>
 </c:forEach>

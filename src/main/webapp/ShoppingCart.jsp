@@ -255,10 +255,10 @@
 				<div class="table-title">
 					<div class="row">
 						<div class="col-xs-6">
-							<h2>Manage <b>Inquiries</b></h2>
+							<h2>Manage <b>Shopping cart</b></h2>
 						</div>
 						<div class="col-xs-6">
-							<a href="http://localhost:8080/JAVAWebApplication/ListAllInquiries" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>List All Order</span></a>	
+							<a href="<c:url value='ListAllCartDetails'/>?userID=<%=session.getAttribute("id") %>" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>List All Items</span></a>	
 							<a href="MenuItemSelection.jsp" class="btn btn-danger" ><i class="material-icons">&#xE15C;</i> <span>Go To Menu </span></a>						
 						</div>
 					</div>
@@ -270,38 +270,23 @@
 							<th>Category</th>
 							<th>Price</th>
 							<th>Quantity</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 			<tbody>
-        <c:forEach var="ListInquiry" items="${ListInquiry}">
-        <c:set var="InquiryID" value="${ListInquiry.getContactID()}"/>
-        <c:set var="InquiryUserID" value="${ListInquiry.getUserID()}"/>
-        <c:set var="CustomerName" value="${ListInquiry.getName()}"/>
-        <c:set var="CustomerEmail" value="${ListInquiry.getEmail()}"/>
-        <c:set var="CustomerInquiry" value="${ListInquiry.getInquery()}"/>
-        <c:set var="Answer" value="${ListInquiry.getAnswer()}"/>
-        
+        <c:forEach var="CartList" items="${CartList}">
+        <c:set var="CartID" value="${CartList.getCardID()}"/>
+        <c:set var="catagory" value="${CartList.getMenuItemCategory()}"/>
+        <c:set var="Name" value="${CartList.getMenuItemName()}"/>
+        <c:set var="price" value="${CartList.getMenuItemPrice()}"/>
+        <c:set var="Quantity" value="${CartList.getQuantity()}"/>   
             <tr>
-                <td>${ListInquiry.getContactID()}</td>
-                <td>${ListInquiry.getUserID()}</td>
-                <td>${ListInquiry.getName()}</td>
-                <td>${ListInquiry.getEmail()}</td>
-         <c:url value="AnswerInquiry.jsp" var="Answer">
-         	<c:param name="id" value="${InquiryID}"/>
-         	<c:param name="CustomerName" value="${CustomerName}"/>
-         	<c:param name="CustomerEmail" value="${CustomerEmail}"/>
-         	<c:param name="CustomerQuestion" value="${CustomerInquiry}"/>
-         	<c:param name="Answer" value="${Answer}"/>
-         </c:url>
-         <c:url value="DeleteInquiry.jsp" var="InquiryDelete">
-         	<c:param name="id" value="${InquiryID}"/>
-         	<c:param name="CustomerName" value="${CustomerName}"/>
-         	<c:param name="CustomerEmail" value="${CustomerEmail}"/>
-         	<c:param name="CustomerQuestion" value="${CustomerInquiry}"/>
-         	<c:param name="Answer" value="${Answer}"/>
-         </c:url>
-                <td><a href="${Answer}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Remove">&#xE254;</i></a>
-            	</td>
+                <td>${CartList.getMenuItemName()}</td>
+                <td>${CartList.getMenuItemCategory()}</td>
+                <td>${CartList.getMenuItemPrice()}</td>
+                <td>${CartList.getQuantity()}</td>
+                <td><a href="#" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Remove">&#xE254;</i></a>
+                <a href="#" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit Quantity">&#xE254;</i></a></td>
 			</tr>
 	</c:forEach>
 			</tbody>
