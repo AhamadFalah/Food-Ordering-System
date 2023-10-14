@@ -252,8 +252,7 @@
     
     <br><br><br><br><br><br><br>
     <div class="container">
-    <h1>Total Price</h1>
-		<div class="table-responsive">
+   		<div class="table-responsive">
 			<div class="table-wrapper">
 				<div class="table-title">
 					<div class="row">
@@ -277,13 +276,16 @@
 						</tr>
 					</thead>
 			<tbody>
+		<c:set var="totalPrice" value="0"/>
         <c:forEach var="CartList" items="${CartList}">
-        <c:set var="CartID" value="${CartList.getCardID()}"/>
+    	<c:set var="CartID" value="${CartList.getCardID()}"/>
         <c:set var="MenuItemID" value="${CartList.getMenuItemID()}"/>
         <c:set var="catagory" value="${CartList.getMenuItemCategory()}"/>
         <c:set var="Name" value="${CartList.getMenuItemName()}"/>
         <c:set var="price" value="${CartList.getMenuItemPrice()}"/>
-        <c:set var="Quantity" value="${CartList.getQuantity()}"/>   
+        <c:set var="Quantity" value="${CartList.getQuantity()}"/> 
+        <c:set var="price" value="${CartList.getMenuItemPrice() * CartList.getQuantity()}"/>
+   	    <c:set var="totalPrice" value="${totalPrice + price}"/>  
             <tr>
                 <td>${CartList.getMenuItemName()}</td>
                 <td>${CartList.getMenuItemCategory()}</td>
@@ -308,9 +310,11 @@
 	</c:forEach>
 			</tbody>
 				</table>
+				<h1 style="align: left;">Total Price: ${totalPrice}</h1>
 			</div>
 		</div>        
     </div>
+    
     
     
     
