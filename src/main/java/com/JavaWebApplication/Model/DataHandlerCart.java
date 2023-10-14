@@ -53,6 +53,56 @@ public class DataHandlerCart {
 		
 	}
 	
+	public ResultSet CheckQuantity(Cart c) {
+		ResultSet rs=null;
+		MyDB db=new MyDB();
+		Connection con=db.getCon();
+		try {
+			PreparedStatement ps=con.prepareStatement("SELECT Quantity FROM cart WHERE Menu_Item_ID=? AND CartID=?");
+			ps.setInt(1,c.getMenuItemID());
+			ps.setInt(1,c.getCardID());
+			rs=ps.executeQuery();
+			return rs;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rs;
+		
+	}
+	
+	public boolean updateQuantity(Cart c,int Cartid,int MenuItemid) {
+		boolean update=false;
+		MyDB db=new MyDB();
+		Connection con=db.getCon();
+		try {
+			PreparedStatement ps=con.prepareStatement("UPDATE cart SET Qunatity=? WHERE CartID=?");
+			ps.setInt(1, c.getMenuItemID());
+			ps.setInt(2, c.getCardID());
+			update=ps.executeUpdate()>0;
+			return update;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return update;
+	}
+	
+	public boolean deleteQuantity(Cart c,int Cartid,int MenuItemid) {
+		boolean delete=false;
+		MyDB db=new MyDB();
+		Connection con=db.getCon();
+		try {
+			PreparedStatement ps=con.prepareStatement("DELETE FROM cart WHERE CartID=? AND Menu_Item_Id=?;");
+			ps.setInt(1, c.getCardID());
+			ps.setInt(2, c.getMenuItemID());
+			delete=ps.executeUpdate()>0;
+			return delete;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return delete;
+	}
+	
 	//Select all the cart details
 	public List<Cart> SelectAllCartdetails(int userID){
 		List<Cart>CartList=new ArrayList<>();

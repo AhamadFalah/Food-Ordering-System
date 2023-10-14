@@ -243,6 +243,9 @@
 
 </head>
 <body>
+<input type="hidden" id="present" value="<%=request.getAttribute("present")%>">
+<% String userID = (String) session.getAttribute("id"); %>
+<input type="hidden" id="search" value="<%=request.getAttribute("search")%>">
     <header>
         <jsp:include page="header.jsp" />
     </header>
@@ -276,6 +279,7 @@
 			<tbody>
         <c:forEach var="CartList" items="${CartList}">
         <c:set var="CartID" value="${CartList.getCardID()}"/>
+        <c:set var="MenuItemID" value="${CartList.getMenuItemID()}"/>
         <c:set var="catagory" value="${CartList.getMenuItemCategory()}"/>
         <c:set var="Name" value="${CartList.getMenuItemName()}"/>
         <c:set var="price" value="${CartList.getMenuItemPrice()}"/>
@@ -285,7 +289,14 @@
                 <td>${CartList.getMenuItemCategory()}</td>
                 <td>${CartList.getMenuItemPrice()}</td>
                 <td>${CartList.getQuantity()}</td>
-                <td><a href="#" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Remove">&#xE254;</i></a>
+                <td>
+                <c:url value="UpdateQuantity.jsp" var="updateQuantity">
+         	<c:param name="CartID" value="${CartID}"/>
+         	<c:param name="Quantity" value="${Quantity}"/>
+         	<c:param name="MenuItemID" value="${MenuItemID}"/>
+         	<c:param name="MenuItemName" value="${Name}"/>
+            </c:url>
+                <a href="${updateQuantity}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Remove">&#xE254;</i></a>
                 <a href="#" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit Quantity">&#xE254;</i></a></td>
 			</tr>
 	</c:forEach>
@@ -300,5 +311,18 @@
     <footer style="font-size:1.5rem;">
         <jsp:include page="footer.jsp" />
     </footer>
+    <script type="text/javascript">
+let update=document.getElementById("update").value;
+if(update=="success"){
+	swal("Item Updated Sucessfully","","success");
+}
+</script>
+
+<script type="text/javascript">
+let present=document.getElementById("present").value;
+if(present=="success"){
+	swal("Item Update Unsucessful","","error");
+}
+</script>
 </body>
 </html>

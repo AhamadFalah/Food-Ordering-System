@@ -218,6 +218,14 @@
   	<servlet-name>ListAllCartDetails</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.ListAllCartDetails</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>UpdateQuantity</display-name>
+  	<servlet-name>UpdateQuantity</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.UpdateQuantity</servlet-class>
+  </servlet>
+ 
   
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
@@ -359,5 +367,10 @@
   	<servlet-name>ListAllCartDetails</servlet-name>
   	<url-pattern>/ListAllCartDetails</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdateQuantity</servlet-name>
+  	<url-pattern>/UpdateQuantity</url-pattern>
+  </servlet-mapping>
+
   
 </web-app>
