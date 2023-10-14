@@ -225,6 +225,13 @@
   	<servlet-name>UpdateQuantity</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.UpdateQuantity</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>DeleteCartItem</display-name>
+  	<servlet-name>DeleteCartItem</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.DeleteCartItem</servlet-class>
+  </servlet>
  
   
   <servlet-mapping>
@@ -370,6 +377,10 @@
   <servlet-mapping>
   	<servlet-name>UpdateQuantity</servlet-name>
   	<url-pattern>/UpdateQuantity</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteCartItem</servlet-name>
+  	<url-pattern>/DeleteCartItem</url-pattern>
   </servlet-mapping>
 
   

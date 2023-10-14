@@ -296,8 +296,14 @@
          	<c:param name="MenuItemID" value="${MenuItemID}"/>
          	<c:param name="MenuItemName" value="${Name}"/>
             </c:url>
-                <a href="${updateQuantity}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Remove">&#xE254;</i></a>
-                <a href="#" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit Quantity">&#xE254;</i></a></td>
+            <c:url value="DeleteCartItem.jsp" var="deleteItemCart">
+         	<c:param name="CartID" value="${CartID}"/>
+         	<c:param name="Quantity" value="${Quantity}"/>
+         	<c:param name="MenuItemID" value="${MenuItemID}"/>
+         	<c:param name="MenuItemName" value="${Name}"/>
+            </c:url>
+                <a href="${updateQuantity}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit Quantity">&#xE254;</i></a>
+                <a href="${deleteItemCart}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Remove">&times;</i></a></td>
 			</tr>
 	</c:forEach>
 			</tbody>
@@ -315,13 +321,6 @@
 let update=document.getElementById("update").value;
 if(update=="success"){
 	swal("Item Updated Sucessfully","","success");
-}
-</script>
-
-<script type="text/javascript">
-let present=document.getElementById("present").value;
-if(present=="success"){
-	swal("Item Update Unsucessful","","error");
 }
 </script>
 </body>

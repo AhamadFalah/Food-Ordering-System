@@ -49,7 +49,6 @@ public class UpdateQuantity extends HttpServlet {
 		int Quantity=Integer.parseInt(request.getParameter("Quantity"));
 		Cart cr=new Cart();
 		cr.setQuantity(Quantity);
-		//cr.setCardID(CartID);
 		DataHandlerCart dhc =new DataHandlerCart();
 		ResultSet rs=dhc.CheckQuantity(cr);
 		update = dhc.updateQuantity(cr, CartID, MenuItemID);
