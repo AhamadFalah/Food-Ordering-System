@@ -232,6 +232,34 @@
   	<servlet-name>DeleteCartItem</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.DeleteCartItem</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ComplaintList</display-name>
+  	<servlet-name>ComplaintList</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ComplaintList</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ComplaintInsert</display-name>
+  	<servlet-name>ComplaintInsert</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ComplaintInsert</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ComplaintUpdate</display-name>
+  	<servlet-name>ComplaintUpdate</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ComplaintUpdate</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ComplaintDelete</display-name>
+  	<servlet-name>ComplaintDelete</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ComplaintDelete</servlet-class>
+  </servlet>
  
   
   <servlet-mapping>
@@ -381,6 +409,22 @@
   <servlet-mapping>
   	<servlet-name>DeleteCartItem</servlet-name>
   	<url-pattern>/DeleteCartItem</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ComplaintList</servlet-name>
+  	<url-pattern>/ComplaintList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ComplaintInsert</servlet-name>
+  	<url-pattern>/ComplaintInsert</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ComplaintUpdate</servlet-name>
+  	<url-pattern>/ComplaintUpdate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ComplaintDelete</servlet-name>
+  	<url-pattern>/ComplaintDelete</url-pattern>
   </servlet-mapping>
 
   
