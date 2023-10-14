@@ -28,7 +28,6 @@ public class DataHandlerCart {
 			result=stmt.executeUpdate()>0;
 			return result;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return result;
@@ -46,7 +45,6 @@ public class DataHandlerCart {
 			rs=stmt.executeQuery();
 			return rs;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return rs;
@@ -64,13 +62,13 @@ public class DataHandlerCart {
 			rs=ps.executeQuery();
 			return rs;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return rs;
 		
 	}
 	
+	//Update quantity
 	public boolean updateQuantity(Cart c,int Cartid,int MenuItemid) {
 		boolean update=false;
 		MyDB db=new MyDB();
@@ -88,6 +86,7 @@ public class DataHandlerCart {
 		return update;
 	}
 	
+	//Deleting Item
 	public boolean deleteQuantity(Cart c,int Cartid,int MenuItemid) {
 		boolean delete=false;
 		MyDB db=new MyDB();
@@ -132,7 +131,6 @@ public class DataHandlerCart {
 			}
 			return CartList;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return CartList;

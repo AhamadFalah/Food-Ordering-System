@@ -59,7 +59,7 @@ transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 	String MenuItemName=request.getParameter("MenuItemName");
 	%>
 <input type="hidden" id="present" value="<%=request.getAttribute("present")%>">
-<input type="hidden" id="delete" value="<%=request.getAttribute("delete")%>">
+<input type="hidden" id="delete1" value="<%=request.getAttribute("delete")%>">
 <div>
 <section class="vh-100">
   <div class="container-fluid">
@@ -100,17 +100,21 @@ transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 </div>			
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" href="alert/dist/sweetalert.css">
+
 <script type="text/javascript">
-let delete=document.getElementById("delete").value;
-if(delete=="success"){
+let delete1=document.getElementById("delete1").value;
+if(delete1=="success"){
 	swal("Cart item is Deleted","Nice","success");
 }
 </script>
+
 <script type="text/javascript">
 let present=document.getElementById("present").value;
 if(present=="error"){
 	swal("Cart item is not deleted","Add a different item","error");
 }
 </script>
+
+
 </body>
 </html>

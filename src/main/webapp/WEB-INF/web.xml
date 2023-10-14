@@ -232,6 +232,20 @@
   	<servlet-name>DeleteCartItem</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.DeleteCartItem</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>AddPayment</display-name>
+  	<servlet-name>AddPayment</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.AddPayment</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ListItemsInPayment</display-name>
+  	<servlet-name>ListItemsInPayment</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ListItemsInPayment</servlet-class>
+  </servlet>
  
   
   <servlet-mapping>
@@ -381,6 +395,14 @@
   <servlet-mapping>
   	<servlet-name>DeleteCartItem</servlet-name>
   	<url-pattern>/DeleteCartItem</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddPayment</servlet-name>
+  	<url-pattern>/AddPayment</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListItemsInPayment</servlet-name>
+  	<url-pattern>/ListItemsInPayment</url-pattern>
   </servlet-mapping>
 
   

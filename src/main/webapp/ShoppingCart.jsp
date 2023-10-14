@@ -310,7 +310,15 @@
 	</c:forEach>
 			</tbody>
 				</table>
+			
+            <c:url value="Payment.jsp" var="Payment">
+            <c:param name="CartList" value="${CartList}"/>
+            <c:param name="CutomerID" value="${userID}"/>
+            <c:param name="total" value="${totalPrice}"/>
+            </c:url>
+            
 				<h1 style="align: left;">Total Price: ${totalPrice}</h1>
+				<a href="${Payment}" class="btn btn-success"><span>Check Out</span></a>
 			</div>
 		</div>        
     </div>
