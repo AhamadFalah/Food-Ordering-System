@@ -290,7 +290,7 @@
                 <td>${CartList.getMenuItemPrice()}</td>
                 <td>${CartList.getQuantity()}</td>
                 <td>
-                <c:url value="UpdateQuantity.jsp" var="updateQuantity">
+            <c:url value="UpdateQuantity.jsp" var="updateQuantity">
          	<c:param name="CartID" value="${CartID}"/>
          	<c:param name="Quantity" value="${Quantity}"/>
          	<c:param name="MenuItemID" value="${MenuItemID}"/>

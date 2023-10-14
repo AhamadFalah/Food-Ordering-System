@@ -47,12 +47,11 @@ public class UpdateQuantity extends HttpServlet {
 		int CartID=Integer.parseInt(request.getParameter("CartID"));
 		int MenuItemID=Integer.parseInt(request.getParameter("MenuItemID"));
 		int Quantity=Integer.parseInt(request.getParameter("Quantity"));
-		
 		Cart cr=new Cart();
 		cr.setQuantity(Quantity);
+		//cr.setCardID(CartID);
 		DataHandlerCart dhc =new DataHandlerCart();
 		ResultSet rs=dhc.CheckQuantity(cr);
-		System.out.println("hello");
 		update = dhc.updateQuantity(cr, CartID, MenuItemID);
 		if(update) {
 			System.out.println("code is executed");

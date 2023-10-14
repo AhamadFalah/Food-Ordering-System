@@ -60,7 +60,7 @@ public class DataHandlerCart {
 		try {
 			PreparedStatement ps=con.prepareStatement("SELECT Quantity FROM cart WHERE Menu_Item_ID=? AND CartID=?");
 			ps.setInt(1,c.getMenuItemID());
-			ps.setInt(1,c.getCardID());
+			ps.setInt(2,c.getCardID());
 			rs=ps.executeQuery();
 			return rs;
 		} catch (SQLException e) {
@@ -76,9 +76,10 @@ public class DataHandlerCart {
 		MyDB db=new MyDB();
 		Connection con=db.getCon();
 		try {
-			PreparedStatement ps=con.prepareStatement("UPDATE cart SET Qunatity=? WHERE CartID=?");
-			ps.setInt(1, c.getMenuItemID());
-			ps.setInt(2, c.getCardID());
+			PreparedStatement ps=con.prepareStatement("UPDATE cart SET Quantity=? WHERE CartID=? AND Menu_Item_ID=?");
+			ps.setInt(1, c.getQuantity());
+			ps.setInt(2, Cartid);
+			ps.setInt(3, MenuItemid);
 			update=ps.executeUpdate()>0;
 			return update;
 		} catch (SQLException e) {
@@ -93,8 +94,8 @@ public class DataHandlerCart {
 		Connection con=db.getCon();
 		try {
 			PreparedStatement ps=con.prepareStatement("DELETE FROM cart WHERE CartID=? AND Menu_Item_Id=?;");
-			ps.setInt(1, c.getCardID());
-			ps.setInt(2, c.getMenuItemID());
+			ps.setInt(1, Cartid);
+			ps.setInt(2, MenuItemid);
 			delete=ps.executeUpdate()>0;
 			return delete;
 		} catch (SQLException e) {
