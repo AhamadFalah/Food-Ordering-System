@@ -241,7 +241,7 @@ body{
 <div class="Origianl_header" style="font-size:1.5rem;">
 
     <header style="font-size:1.5rem;">
-        <jsp:include page="header.jsp" />
+        <jsp:include page="header2.jsp" />
     </header>
 
 </div>

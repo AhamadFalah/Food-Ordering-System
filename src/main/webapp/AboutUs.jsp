@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-
+<% 
+Boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
+%>
 <!DOCTYPE html>
  <html lang="en">
      <head>
          <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-           <title>About Us</title>
+           <title>About us</title>
+             <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Add your custom CSS --> 
              <style>
                body { 
                 font-family: 'Open Sans', sans-serif;
@@ -15,12 +15,9 @@
                     color: #333; 
                
                  } 
-                .navbar { 
-                    background-color: #000;
-                } 
-                .navbar-dark .navbar-toggler-icon {
-                     background-color: #FFF; 
-                     } 
+               
+               
+               
                 .jumbotron{ 
                     background-image: url('your-introduction-image.jpg'); 
                     background-size: cover;
@@ -45,7 +42,7 @@
                      background-color: #FFF; 
                      } 
                  #our-story {
-                     background-image: url('your-story-image.jpg') no-repeat;
+                    background-image: url('your-story-image.jpg') no-repeat;
                     background-size: cover;
                     background-position: left;
                     color: #FFF; 
@@ -69,83 +66,123 @@
                      }
                      
                      .header-image{
-    background-image: url("banner.png");
-    background-position: center;
+                     background-image: url("images/Banner2.jpg");
+                    background-position: center;
+                    -webkit-background-size: cover;
+                    background-size: cover;
+                    position: absolute;
+                     height: 70%;
+  					  width: 100%;
+  					  z-index: -1;
+					}		
 
-    -webkit-background-size: cover;
-    background-size: cover;
-
-   
-
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
-}
-
-.header-content{
-    color: #fff;
-    text-shadow: 0px 0px 1px black;
-    text-align: center;
-    padding-top: 250px;
-    padding-bottom: 250px;
+					.header-content{
+          			  color: #fff;
+   					  text-shadow: 0px 0px 1px black;
+                      text-align: center;
+                      padding-top: 250px;
+                      padding-bottom: 250px;
 }
 .box{
     margin: 30px;
     float: left;
 }
 .h1box{
-    color:rgb(0, 0, 0);
+    color:white;
     float: left;
     -webkit-text-stroke:1px rgb(100, 100, 100);
 }
 .h3box{
-    color:#000000;
+    color:white;
     float: left;
+    
     -webkit-text-stroke:1px rgb(100, 100, 100);
+    }
+ 
+  .topnv {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0px 5px 10px 0px #aaa;
+  height: 65px;
+  z-index:1;
+  
+  
+  
 }
-                   
-                
-                  </style> 
-                     
-</head> 
 
- <body> 
+/* Style the links inside the navigation bar */
+.topnv a {
+    font-weight: bold;
+   font-size: 18px;
+  float: right;
+  color: #676666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  
+}
 
+/* Change the color of links on hover */
+.topnv a:hover {
+    background-color: #f4f2f2;
+  text-decoration: none;
+  color:rgb(66, 154, 117);
+}  
+.log{
+ position :fixed;
+ z-index:2;
+ margin-left:50px;
+}
 
-                        <div class="container-fluid">
-                            <div class="row">
+                                       
+      </style>         
+                </head> 
+
+                    <body>  
+   <img alt="images/logo9.png" src="images/logo9.png" class="log" width=230px height=230px >
+  	<div class ="topnv">
+	  <% if (loggedIn != null && loggedIn) { %>
+    <a href="Logout">Logout</a>
+    <a href="userProfilePage.jsp">Profile</a>
+    <a href="ShoppingCart.jsp">Cart</a>
+     <% } else { %>
+                  <a href="Login.jsp">Login</a>
+    <% } %>
+    <a href="contact.jsp">Contact</a>
+    <a href="#testimonials">Testimonial</a>
+    <a href="MenuItemSelection.jsp">Menu</a>
+    <a href="#about">About</a>
+     <a href="index.jsp">Home</a>
+ </div>
+  
+ 
+          
+                            
                               <div class="header-image">
                               </div>
-                              <div class="col-md-12 header-content">
-                                                                                                                  
-                                       
-
+                              <div class="col-md-12 header-content">                                                                                                                                                   
                                        <div class="box">
-                                        <a class="site-logo" href="#">
-                                            <img src="images/logo9.png" alt="Your Logo">
-                                        </a><br><br>
                                             <h1 class="h1box" >Welcome to Uzumaki</h1> <br><br><br>
                                             <h2 class="h3box">Experience the Authentic Flavors of Ramen</h2><br><br>
-                                       <a style="float: left;" href="#" class="btn btn-primary cta-button">Order Now</a>
+                                       <a style="float: left;" href="MenuItemSelection.jsp" class="btn btn-primary cta-button">Order Now</a>
                                     </div>
                               </div>
-                            </div>
                            
-                          </div>
-                      
-                         <br>
+                               
+                                       
                          <section id="introduction" class="container mt-5">
                             <div class="cardour"></div>
                              <h2>Introduction</h2>
-                              <p>Welcome to [Your Website Name], your destination for a delightful ramen experience. We take pride in offering you an exquisite selection of traditional and modern ramen dishes. With a commitment to quality and taste, we invite you to savor the authentic flavors of Japan.</p>
+                              <p>Welcome to uzumaki, your destination for a delightful ramen experience. We take pride in offering you an exquisite selection of traditional and modern ramen dishes. With a commitment to quality and taste, we invite you to savor the authentic flavors of Japan.</p>
                                <p>Our ramen is made with the finest ingredients and crafted with care. We're passionate about delivering an unforgettable culinary experience to our guests.</p>
                             </section>
                         </section>
                         <br><br><br>
                         <center>
                             <video class="vidd" autoplay loop  controls>
-                                <source src="video/ramenvid.mp4" type="video/mp4">
+                                <source src="Video/ramenvideo2.webm" type="video/mp4">
                             </video>
                         </center>
                                 <br><br>
@@ -171,7 +208,7 @@
                                         <img src="images/MisoRamen.png" class="card-img-top" alt="Ramen 1 Image"> 
                                         <div class="card-body">
                                          <h3 class="card-title">Miso Ramen</h3> 
-                                            <p class="card-text">Coming from the Sapporo region of Hokkaido, miso ramen takes its name from its main ingredient. This broth is strong and savory and has an opaque appearance. There’s lots of different varieties of miso paste too – white miso, red miso, barley miso, and soybean miso are just a few.</p> 
+                                            <p class="card-text">Coming from the Sapporo region of Hokkaido, miso ramen takes its name from its main ingredient. This broth is strong and savory and has an opaque appearance. There's lots of different varieties of miso paste too.</p> 
                                         </div>
                                     </div>
                                 </div>
@@ -188,17 +225,22 @@
 
                                 <div class="col-lg-4">
                                     <div class="card"> 
-                                        <img src="images/ShioRamen.png" class="card-img-top" alt="Ramen 2 Image"> 
+                                        <img src="images/ShioRamen.png" class="card-img-top" alt="Ramen 3 Image"> 
                                         <div class="card-body">
                                              <h3 class="card-title">Shio Ramen </h3>
                                               <p class="card-text">Shio means salt and this style of ramen tends to be light and transparent. It’s often made by boiling down chicken bones and flavored with seafood based products like dried sardines, dashi stock, and bonito flakes.</p>
                                          </div> 
                                     </div> 
                                 </div>
+                                </div>
+                                </section>
+                                
+											<br><br><br>
+		
+					<footer>
+                		<jsp:include page="footer.jsp" />
+  					</footer>
 
-</div>
-</section>
 </body>
-</html>
-                        
+</html>                        
                                        

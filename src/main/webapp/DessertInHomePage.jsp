@@ -242,7 +242,7 @@ body{
 <div class="Origianl_header">
 
     <header>
-        <jsp:include page="header.jsp" />
+        <jsp:include page="header2.jsp" />
     </header>
 
 </div>

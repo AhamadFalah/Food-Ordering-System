@@ -17,9 +17,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <style>
     body {
-        color: #566787;
-		background: #f5f5f5;
-		font-family: 'Varela Round', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        background-color: #F5F5F5; 
+        color: #333; 
 		font-size: 13px;
 	}
 	.table-responsive {
@@ -248,7 +248,7 @@
    String MenuItem="";%>
 <input type="hidden" id="search" value="<%=request.getAttribute("search")%>">
     <header>
-        <jsp:include page="header.jsp" />
+        <jsp:include page="header2.jsp" />
     </header>
     
     <br><br><br><br><br><br><br>

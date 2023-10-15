@@ -673,7 +673,7 @@ body {
           </div>
           <ul class="menu-items">
               <li><a href="index.jsp">Home</a></li>
-              <li><a href="#about">About</a></li>
+              <li><a href="AboutUs.jsp">About</a></li>
               <li><a href="MenuItemSelection.jsp">Menu</a></li>
               <li><a href="#testimonials">Testimonial</a></li>
               <li><a href="contact.jsp">Contact</a></li>
