@@ -168,7 +168,7 @@ request.setAttribute("profileImage",profileImage);%>
 							<h2 style="margin-left:50px;"><b>Orders</b></h2>
 						</div>
 						<div class="col-xs-6" style="margin-left:600px; margin-bottom:60px;">
-							<a href="<c:url value='ListOrderHistory'/>?userID=<%=session.getAttribute("id") %>#inquiry-info" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>List All Orders</span></a>
+							<a href="<c:url value='http://localhost:8080/JAVAWebApplication/ListOrderHistory1'/>?userID=<%=session.getAttribute("id") %>#inquiry-info" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>List All Orders</span></a>
 					        <br><br><a href="contact.jsp" class="btn btn-success" style="float:left;"><i class="material-icons">&#xE147;</i> <span>More Questions?</span></a>								
 						</div>
 					</div>
