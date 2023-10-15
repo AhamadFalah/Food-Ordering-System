@@ -16,13 +16,13 @@ import com.JavaWebApplication.Model.DataHandlerOrders;
 /**
  * Servlet implementation class ListOrderHistory
  */
-public class ListOrderHistory extends HttpServlet {
+public class ListOrderHistory1 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ListOrderHistory() {
+    public ListOrderHistory1() {
         super();
         // TODO Auto-generated constructor stub
     }
