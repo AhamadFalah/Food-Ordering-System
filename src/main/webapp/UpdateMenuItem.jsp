@@ -76,7 +76,7 @@ String MenuItemPrice=request.getParameter("MenuItemPrice");
       <div class="col-sm-6 text-black">
 
         <div class="px-5 ms-xl-4" style="margin-top:-2px" >
-          <center><img alt="Logo png" src="images/logo9.png" width=200px height=200px></center>
+          <center><img alt="Logo png" src="images/ramen78.png" width="300px" height="300px"></center>
         </div>
 
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">

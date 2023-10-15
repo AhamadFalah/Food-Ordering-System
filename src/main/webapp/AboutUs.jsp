@@ -4,15 +4,25 @@ Boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
 <!DOCTYPE html>
  <html lang="en">
      <head>
+     <link rel="icon" type="image/png" href="images/ramen78.png"/>
          <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
            <title>About us</title>
              <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> <!-- Add your custom CSS --> 
              <style>
+			*{
+			   font-family: 'Nunito', sans-serif;
+			   margin:0; padding:0;
+			   box-sizing: border-box;
+			   outline: none; border:none;
+			   text-decoration: none;
+			   transition: all .2s linear;
+			   text-transform: capitalize;
+			}
                body { 
                 font-family: 'Open Sans', sans-serif;
-                    background-color: #F5F5F5; 
-                    color: #333; 
+                background-color: #F5F5F5; 
+                color: #333; 
                
                  } 
                

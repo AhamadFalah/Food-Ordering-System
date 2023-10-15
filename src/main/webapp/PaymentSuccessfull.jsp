@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>contact us</title>
+<link rel="icon" type="image/png" href="images/ramen78.png"/>
+<title>Payment Done</title>
   <style>
         .Subutton{
   background-color: #4CAF50;

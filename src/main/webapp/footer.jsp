@@ -146,7 +146,7 @@ svg {
                 </li>
 
                 <li>
-                  <a href="/pages/about-us" class="c-link">About Us</a>
+                  <a href="AboutUs.jsp" class="c-link">About Us</a>
                 </li>
 
                 <li>

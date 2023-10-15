@@ -3,9 +3,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="images/ramen78.png"/>
 <meta charset="UTF-8">
 <title>MenuItemSelectionPage</title>
         <style>
+       		*{
+   				font-family: 'Nunito', sans-serif;
+   				margin:0; padding:0;
+   				box-sizing: border-box;
+   				outline: none; border:none;
+   				text-decoration: none;
+   				transition: all .2s linear;
+   				text-transform: capitalize;
+			}
             #center {
                 margin-top: 70px;
                 margin-bottom: 30px;
