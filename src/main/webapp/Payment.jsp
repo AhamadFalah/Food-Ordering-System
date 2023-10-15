@@ -120,25 +120,23 @@ span.price {
 <body>
 
 
-<%
-
-%>
 <div class="row">
   <div class="col-75">
     <div class="container">
-      <form action="/action_page.php">
-      <input type="hidden" value="<%=request.getParameter("CutomerID") %>" name="UserID">
-      <input type="hidden" value="<%=request.getParameter("total") %>" name="UserID">
+      <form action="http://localhost:8080/JAVAWebApplication/AddPayment" method="post">
         <h1 style="align: left;">Total:<%=request.getParameter("total") %></h1>
         <div class="row">
           <div class="col-50">
             <h3>Billing Address</h3>
+      <input type="hidden" value="<%=session.getAttribute("id") %>" name="UserID">
+      <input type="hidden" value="<%=request.getParameter("total") %>" name="Total">
+      <input type="hidden" value="<%=request.getParameter("ItemList") %>" name="ItemList">
             <label for="fname"><i class="fa fa-user" ></i> Full Name</label>
-            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe" required>
             <label for="email"><i class="fa fa-envelope"></i> Email</label>
-            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <input type="text" id="email" name="email" placeholder="john@example.com" required>
             <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
-            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street" required>
             <label for="paymentMethod">Select Payment Method:</label>
 			<select id="paymentMethod" name="paymentMethod">
   					<option value="CashOnDelivery">Cash On Delivery</option>
@@ -175,7 +173,7 @@ span.price {
           </div>
           </div>
         </div>
-        <input type="submit" value="Continue to checkout" class="btn">
+        <input type="submit" value="Finalise Payment" class="btn">
       </form>
       <br>
         <a href="ShoppingCart.jsp"><button class="btn">Go back to Shopping Cart</button></a>
@@ -184,11 +182,9 @@ span.price {
   <div class="col-25">
     <div class="container">
       <h4>Cart <span class="price" style="color:black"><i class="fa fa-shopping-cart"></i> <b></b></span></h4>
-      <a href="<c:url value='ListItemsInPayment'/>?userID=<%=session.getAttribute("id") %>">List Items</a>
-      <c:forEach var="CartList" items="${CartList}">
-      <p><a href="#">${CartList.getMenuItemName()}</a> <span class="price"></span></p>
-      </c:forEach>
-      
+     <!-- <a href="<c:url value='ListItemsInPayment'/>?userID=<%=session.getAttribute("id") %>">List Items</a> -->
+      <p><%=request.getParameter("ItemList") %></p>
+      <p><a href="#"></a> <span class="price"></span></p>
       <hr>
       <p>Total <span class="price" style="color:black"><b><%=request.getParameter("total") %></b></span></p>
     </div>

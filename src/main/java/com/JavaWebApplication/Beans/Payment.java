@@ -3,23 +3,30 @@ package com.JavaWebApplication.Beans;
 public class Payment {
 	private int UserID;
 	private int orderID;
+	private String CustomerName;
 	private String Email;
 	private String Address;
 	private String Paymment_type;
 	private String Card_Name;
-	private int card_No;
+	private long card_No;
 	private String Expiary_Month;
 	private String Expiary_Year;
-	public int getCard_No() {
-		return card_No;
-	}
-	public void setCard_No(int card_No) {
-		this.card_No = card_No;
-	}
-	private int CVV;
 	private double Total_Price;
 	private String transaction_Date;
 	private String Order_Details;
+	private int CVV;
+	public String getCustomerName() {
+		return CustomerName;
+	}
+	public void setCustomerName(String customerName) {
+		CustomerName = customerName;
+	}
+	public long getCard_No() {
+		return card_No;
+	}
+	public void setCard_No(long card_No) {
+		this.card_No = card_No;
+	}
 	public int getUserID() {
 		return UserID;
 	}

@@ -38,11 +38,9 @@ request.setAttribute("profileImage",profileImage);%>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#account-change-Email">Change Email</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-info">Payments</a>
+                            href="#orders-info">Order history</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-social-links">Order history</a>
-                        <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#account-connections">Complaints</a>
+                            href="#">Complaints</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#inquiry-info">Inquiries</a>
                         <a class="btn btn-primary"
@@ -102,7 +100,8 @@ request.setAttribute("profileImage",profileImage);%>
 			<input type="reset" class="btn btn-default" value="Reset" style="margin-right: 20px;">
               </form>
                         </div>
-        
+                        
+        <!-- Inquiry List -->
                         <div class="tab-pane fade" id="inquiry-info" style="margin-top:10px;">
     <div class="container">
 		<div class="table-responsive">
@@ -157,6 +156,64 @@ request.setAttribute("profileImage",profileImage);%>
 		</div>        
     </div>
                         </div>
+                        
+                       
+ <div class="tab-pane fade" id="orders-info" style="margin-top:10px;">
+    <div class="container">
+		<div class="table-responsive">
+			<div class="table-wrapper">
+				<div class="table-title">
+					<div class="row">
+						<div class="col-xs-6">
+							<h2 style="margin-left:50px;"><b>Orders</b></h2>
+						</div>
+						<div class="col-xs-6" style="margin-left:600px; margin-bottom:60px;">
+							<a href="<c:url value='ListOrderHistory'/>?userID=<%=session.getAttribute("id") %>#inquiry-info" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>List All Orders</span></a>
+					        <br><br><a href="contact.jsp" class="btn btn-success" style="float:left;"><i class="material-icons">&#xE147;</i> <span>More Questions?</span></a>								
+						</div>
+					</div>
+				</div>
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Customer name</th>
+							<th>Payment Type</th>
+							<th>Total</th>
+							<th>Transaction Date</th>
+							<th>Order Details</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+			<tbody>
+        <c:forEach var="ListOrder" items="${ListOrder}">
+        
+            <tr>
+                <td>${ListOrder.getCustomerName()}</td>
+                <td>${ListOrder.getPaymment_type()}</td>
+                <td>${ListOrder.getTotal_Price()}</td>
+                <td>${ListOrder.getTransaction_Date()}</td>
+                <td>${ListOrder.getOrder_Details()}</td>
+                
+         <c:url value="#" var="Complaint">
+         
+         </c:url>
+                <td>
+                <a href="${Complaint}" >Complaint</a>
+                <a href="${Delete}" >Delete</a>
+            	</td>
+			</tr>
+	</c:forEach>
+			</tbody>
+				</table>
+			</div>
+		</div>        
+    </div>
+      </div>
+                        
+                        
+                        
+                        
+                        
                         <div class="tab-pane fade" id="account-connections">
                             <div class="card-body">
                                 <button type="button" class="btn btn-twitter">Connect to

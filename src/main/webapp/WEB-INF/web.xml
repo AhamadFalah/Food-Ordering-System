@@ -246,6 +246,13 @@
   	<servlet-name>ListItemsInPayment</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.ListItemsInPayment</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ListOrderHistory</display-name>
+  	<servlet-name>ListOrderHistory</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ListOrderHistory</servlet-class>
+  </servlet>
  
   
   <servlet-mapping>
@@ -403,6 +410,10 @@
   <servlet-mapping>
   	<servlet-name>ListItemsInPayment</servlet-name>
   	<url-pattern>/ListItemsInPayment</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListOrderHistory</servlet-name>
+  	<url-pattern>/ListOrderHistory</url-pattern>
   </servlet-mapping>
 
   
