@@ -312,17 +312,26 @@ body{
          	<c:param name="MenuItemPrice" value="${MenuItemPrice}"/>
          </c:url>
          
+         <c:url value="Payment.jsp" var="directPayment">
+         	<c:param name="UserID" value="<%=userID%>"/>
+         	<c:param name="id" value="${MenuItemID}"/>
+         	<c:param name="MenuItemCategory" value="${MenuItemCategory}"/>
+         	<c:param name="ItemList" value="${MenuItemName} 1 ${MenuItemPrice}"/>
+         	<c:param name="total" value="${MenuItemPrice}"/>
+         </c:url>
+         
    <div class="preview " data-target="p-${MenuItem.getMenuItemID()}">
       <i class="fas fa-times"></i>
          <img src="${MenuItem.getMenuItemImageUrl()}" alt="" height="300px" width="300px">
       <h3>${MenuItem.getMenuItemName()}</h3>
       <div class="price">${MenuItem.getMenuItemPrice()}</div>
       <div class="buttons">
-         <a href="#" class="buy">buy now</a>
-         <% if (loggedIn != null && loggedIn) { %>
-         <a href="${itemToShoppingCart}" class="cart">add to cart</a>
+        <% if (loggedIn != null && loggedIn) { %>
+        <a href="${itemToShoppingCart}" class="cart">add to cart</a>
+        <a href="${directPayment}" class="buy">buy now</a>
               <% } else { %>
          <a href="Login.jsp" class="cart">add to cart</a>
+         <a href="Login.jsp" class="buy">buy now</a>
               <% } %>
       </div>
    </div>

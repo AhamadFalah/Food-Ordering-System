@@ -244,7 +244,8 @@
 </head>
 <body>
 <input type="hidden" id="present" value="<%=request.getAttribute("present")%>">
-<% String userID = (String) session.getAttribute("id"); %>
+<% String userID = (String) session.getAttribute("id");
+   String MenuItem="";%>
 <input type="hidden" id="search" value="<%=request.getAttribute("search")%>">
     <header>
         <jsp:include page="header.jsp" />
@@ -277,6 +278,7 @@
 					</thead>
 			<tbody>
 		<c:set var="totalPrice" value="0"/>
+		<c:set var="ItemList" value=""/>
         <c:forEach var="CartList" items="${CartList}">
     	<c:set var="CartID" value="${CartList.getCardID()}"/>
         <c:set var="MenuItemID" value="${CartList.getMenuItemID()}"/>
@@ -286,6 +288,7 @@
         <c:set var="Quantity" value="${CartList.getQuantity()}"/> 
         <c:set var="price" value="${CartList.getMenuItemPrice() * CartList.getQuantity()}"/>
    	    <c:set var="totalPrice" value="${totalPrice + price}"/>  
+   	    <c:set var="MenuItem" value="${MenuItem}${CartList.getMenuItemName()} ${CartList.getQuantity()} ${price}</br>"/>
             <tr>
                 <td>${CartList.getMenuItemName()}</td>
                 <td>${CartList.getMenuItemCategory()}</td>
@@ -310,7 +313,16 @@
 	</c:forEach>
 			</tbody>
 				</table>
+			
+            <c:url value="Payment.jsp" var="Payment">
+            <c:param name="CartList" value="${CartList}"/>
+            <c:param name="CutomerID" value="${userID}"/>
+            <c:param name="total" value="${totalPrice}"/>
+            <c:param name="ItemList" value="${MenuItem}"/>
+            </c:url>
+            
 				<h1 style="align: left;">Total Price: ${totalPrice}</h1>
+				<a href="${Payment}" class="btn btn-success"><span>Check Out</span></a>
 			</div>
 		</div>        
     </div>

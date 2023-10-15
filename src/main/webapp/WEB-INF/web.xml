@@ -235,10 +235,26 @@
   <servlet>
   	<description>
   	</description>
-  	<display-name>ComplaintList</display-name>
-  	<servlet-name>ComplaintList</servlet-name>
-  	<servlet-class>com.JavaWebApplication.Controller.ComplaintList</servlet-class>
+  	<display-name>AddPayment</display-name>
+  	<servlet-name>AddPayment</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.AddPayment</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ListItemsInPayment</display-name>
+  	<servlet-name>ListItemsInPayment</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ListItemsInPayment</servlet-class>
+  </servlet>
+  
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ListOrderHistory</display-name>
+  	<servlet-name>ListOrderHistory</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ListOrderHistory</servlet-class>
+  </servlet>
+  
   <servlet>
   	<description>
   	</description>
@@ -246,6 +262,7 @@
   	<servlet-name>ComplaintInsert</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.ComplaintInsert</servlet-class>
   </servlet>
+  
   <servlet>
   	<description>
   	</description>
@@ -253,12 +270,20 @@
   	<servlet-name>ComplaintUpdate</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.ComplaintUpdate</servlet-class>
   </servlet>
+  
   <servlet>
   	<description>
   	</description>
   	<display-name>ComplaintDelete</display-name>
   	<servlet-name>ComplaintDelete</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.ComplaintDelete</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ListOrderHistory1</display-name>
+  	<servlet-name>ListOrderHistory1</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ListOrderHistory1</servlet-class>
   </servlet>
  
   
@@ -350,71 +375,98 @@
   	<servlet-name>DessertsInHomePage</servlet-name>
   	<url-pattern>/DessertsInHomePage</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>DessertInHomePage</servlet-name>
   	<url-pattern>/DessertInHomePage</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>DrinksInHomePage</servlet-name>
   	<url-pattern>/DrinksInHomePage</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>SearchDessertItem</servlet-name>
   	<url-pattern>/SearchDessertItem</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>SearchMainCourse</servlet-name>
   	<url-pattern>/SearchMainCourse</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>SearchDrink</servlet-name>
   	<url-pattern>/SearchDrink</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>SearchApps</servlet-name>
   	<url-pattern>/SearchApps</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>AdditemToShoppingCart</servlet-name>
   	<url-pattern>/AdditemToShoppingCart</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>AddDsertToShoppingCart</servlet-name>
   	<url-pattern>/AddDsertToShoppingCart</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>AddDrinkToShoppingCart</servlet-name>
   	<url-pattern>/AddDrinkToShoppingCart</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>AddDrinksToShoppingCart</servlet-name>
   	<url-pattern>/AddDrinksToShoppingCart</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>AddMainCourseToShoppingCart</servlet-name>
   	<url-pattern>/AddMainCourseToShoppingCart</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>AddMainCoursesToShoppingCart</servlet-name>
   	<url-pattern>/AddMainCoursesToShoppingCart</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>ListAllCartDetails</servlet-name>
   	<url-pattern>/ListAllCartDetails</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>UpdateQuantity</servlet-name>
   	<url-pattern>/UpdateQuantity</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
   	<servlet-name>DeleteCartItem</servlet-name>
   	<url-pattern>/DeleteCartItem</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
-  	<servlet-name>ComplaintList</servlet-name>
-  	<url-pattern>/ComplaintList</url-pattern>
+  	<servlet-name>AddPayment</servlet-name>
+  	<url-pattern>/AddPayment</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>ListItemsInPayment</servlet-name>
+  	<url-pattern>/ListItemsInPayment</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>ListOrderHistory</servlet-name>
+  	<url-pattern>/ListOrderHistory</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
+  
   	<servlet-name>ComplaintInsert</servlet-name>
   	<url-pattern>/ComplaintInsert</url-pattern>
   </servlet-mapping>
@@ -425,6 +477,10 @@
   <servlet-mapping>
   	<servlet-name>ComplaintDelete</servlet-name>
   	<url-pattern>/ComplaintDelete</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListOrderHistory1</servlet-name>
+  	<url-pattern>/ListOrderHistory1</url-pattern>
   </servlet-mapping>
 
   
