@@ -1,7 +1,10 @@
 package com.JavaWebApplication.Model;
 
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.JavaWebApplication.Beans.Payment;
 import com.JavaWebApplication.Beans.user;
 
 import java.sql.Connection;
@@ -116,8 +119,57 @@ public class DataProvider {
 		return update;
 	}
 	
+	public List<user> ListAllUsers(){
+		List<user>UserList=new ArrayList<>();
+		MyDB db=new MyDB();
+		Connection con=db.getCon();
+		try {
+			PreparedStatement stmt=con.prepareStatement("SELECT * FROM signupdata");
+			ResultSet rs=stmt.executeQuery();
+			while(rs.next()) {
+				int customerID=rs.getInt("userID");
+				String customerName=rs.getString("user_Name");
+				String customeremail=rs.getString("user_Email");
+				String customerNo=rs.getString("user_PhoneNumber");
+				String Address=rs.getString("user_Address");
+				
+				user p=new user();
+				p.setUserID(customerID);
+				p.setName(customerName);
+				p.setEmail(customeremail);
+				p.setPhoneNo(customerNo);
+				p.setAddress(Address);
+				UserList.add(p);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return UserList;
+		
+	}
+		
+		
+		public boolean deleteuser(int userID) {
+			boolean rowDeleted = false;
+			MyDB db=new MyDB();
+			Connection con=db.getCon();
+			try {
+				PreparedStatement stmt=con.prepareStatement("DELETE FROM signupdata WHERE userID=? ");
+				stmt.setInt(1, userID);
+				rowDeleted=stmt.executeUpdate()>0;
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+			return rowDeleted;
+			
+		}
+		
+		
+	}
 	
 	
 	
 	
-}
+	
+
