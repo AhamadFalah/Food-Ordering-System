@@ -285,6 +285,27 @@
   	<servlet-name>ListOrderHistory1</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.ListOrderHistory1</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ListUser</display-name>
+  	<servlet-name>ListUser</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ListUser</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>DeleteUser</display-name>
+  	<servlet-name>DeleteUser</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.DeleteUser</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>DeleteUsers</display-name>
+  	<servlet-name>DeleteUsers</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.DeleteUsers</servlet-class>
+  </servlet>
  
   
   <servlet-mapping>
@@ -481,6 +502,18 @@
   <servlet-mapping>
   	<servlet-name>ListOrderHistory1</servlet-name>
   	<url-pattern>/ListOrderHistory1</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListUser</servlet-name>
+  	<url-pattern>/ListUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteUser</servlet-name>
+  	<url-pattern>/DeleteUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteUsers</servlet-name>
+  	<url-pattern>/DeleteUsers</url-pattern>
   </servlet-mapping>
 
   
