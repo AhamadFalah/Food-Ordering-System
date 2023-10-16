@@ -4,6 +4,7 @@ Boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
 %>
 <html lang="en">
   <head>
+   	<link rel="icon" type="image/png" href="images/ramen78.png"/>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -673,7 +674,7 @@ body {
           </div>
           <ul class="menu-items">
               <li><a href="index.jsp">Home</a></li>
-              <li><a href="#about">About</a></li>
+              <li><a href="AboutUs.jsp">About</a></li>
               <li><a href="MenuItemSelection.jsp">Menu</a></li>
               <li><a href="#testimonials">Testimonial</a></li>
               <li><a href="contact.jsp">Contact</a></li>
@@ -766,7 +767,7 @@ body {
     </section>
     <section id="food-menu">
     <center>
-        <video width="1280" height="720" controls>
+        <video width="1280" height="720" autoplay muted loop>
   			<source src="Video/ramen.mp4">
 		</video>
     </center>

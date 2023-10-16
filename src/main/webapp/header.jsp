@@ -678,6 +678,7 @@ body {
               <span class="line line2"></span>
               <span class="line line3"></span>
           </div>
+          
           <ul class="menu-items">
               <li><a href="index.jsp">Home</a></li>
               <li><a href="#about">About</a></li>

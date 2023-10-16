@@ -1,7 +1,18 @@
 
 <html>
     <head>
+     <link rel="icon" type="image/png" href="images/ramen78.png"/>
+    <title>Admin UI</title>
         <style>
+ 			*{
+   				font-family: 'Nunito', sans-serif;
+  				margin:0; padding:0;
+   				box-sizing: border-box;
+   				outline: none; border:none;
+   				text-decoration: none;
+  				transition: all .2s linear;
+   				text-transform: capitalize;
+			}
             #center {
                 margin-top: 70px;
                 margin-bottom: 30px;
@@ -81,7 +92,7 @@
         </script>
     </head>
     <body>
-    <center><img src="images/logo9.png" width="500px" height="500px"></center>
+    <center><img src="images/ramen78.png" width="500px" height="500px"></center>
         <div>
             <h1 id="center"><b>SYSTEM DASHBOARD<b></h1>
             <h1 id="center"><b><%=session.getAttribute("name")%><b></h1>

@@ -3,9 +3,19 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="images/ramen78.png"/>
 <meta charset="UTF-8">
 <title>MenuItemSelectionPage</title>
         <style>
+       		*{
+   				font-family: 'Nunito', sans-serif;
+   				margin:0; padding:0;
+   				box-sizing: border-box;
+   				outline: none; border:none;
+   				text-decoration: none;
+   				transition: all .2s linear;
+   				text-transform: capitalize;
+			}
             #center {
                 margin-top: 70px;
                 margin-bottom: 30px;
@@ -47,8 +57,8 @@
             }
 
             .option img {
-                width: 40px;
-                height: 40px;
+             width: 40px;
+             height: 40px;
              border-radius:70px;
             }
 
@@ -81,7 +91,7 @@
 <body>
 
     <header>
-        <jsp:include page="header.jsp" />
+        <jsp:include page="header2.jsp" />
     </header>
     <br>
     <br>
@@ -94,7 +104,7 @@
     <br>
     <br>
         <div class="container-option" >
-        <img src="images/logo9.png">
+        <img src="images/ramen78.png" height="400px" width="400px">
             <div class="container-left">
                 <div class="option">
                     <a href="http://localhost:8080/JAVAWebApplication/ListAllAppetisers" style="text-decoration:none"><button>Appetisers<img src="MenuItemImages/food.png" alt="Image-Arrow"></button></a>

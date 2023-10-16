@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="icon" type="image/png" href="images/ramen78.png"/>
   <meta charset="UTF-8">
   <title>Order Confirmation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">

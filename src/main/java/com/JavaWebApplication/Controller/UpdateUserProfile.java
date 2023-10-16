@@ -90,6 +90,7 @@ public class UpdateUserProfile extends HttpServlet {
 		u1.setProfileImage(uploadPath1);
 		DataProvider d1=new DataProvider();
 		rs=d1.CheckEmail(u1);
+		
 		update=d1.updateUserProfile(u1, UserId);
 		if(update) {
 			request.setAttribute("update", "success");

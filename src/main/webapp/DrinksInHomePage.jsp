@@ -11,6 +11,7 @@ Boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   <link rel="icon" type="image/png" href="images/ramen78.png"/>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -241,7 +242,7 @@ body{
 <div class="Origianl_header" style="font-size:1.5rem;">
 
     <header style="font-size:1.5rem;">
-        <jsp:include page="header.jsp" />
+        <jsp:include page="header2.jsp" />
     </header>
 
 </div>

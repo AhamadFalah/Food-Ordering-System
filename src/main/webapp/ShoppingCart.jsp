@@ -8,6 +8,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/png" href="images/ramen78.png"/>
 <meta charset="UTF-8">
 <title>Shopping Cart</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
@@ -16,10 +17,19 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <style>
+	*{
+	   font-family: 'Nunito', sans-serif;
+	   margin:0; padding:0;
+	   box-sizing: border-box;
+	   outline: none; border:none;
+	   text-decoration: none;
+	   transition: all .2s linear;
+	   text-transform: capitalize;
+	}
     body {
-        color: #566787;
-		background: #f5f5f5;
-		font-family: 'Varela Round', sans-serif;
+        font-family: 'Open Sans', sans-serif;
+        background-color: #F5F5F5; 
+        color: #333; 
 		font-size: 13px;
 	}
 	.table-responsive {
@@ -248,7 +258,7 @@
    String MenuItem="";%>
 <input type="hidden" id="search" value="<%=request.getAttribute("search")%>">
     <header>
-        <jsp:include page="header.jsp" />
+        <jsp:include page="header2.jsp" />
     </header>
     
     <br><br><br><br><br><br><br>
