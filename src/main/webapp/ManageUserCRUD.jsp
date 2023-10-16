@@ -298,7 +298,7 @@ $(document).ready(function(){
 						</tr>
 					</thead>
 			<tbody>
-        <c:forEach var="user" items="${ListUser}">
+        <c:forEach var="user" items="${listUser}">
         <c:set var="userID" value="${user.getUserID()}"/>
         <c:set var="name" value="${user.getName()}"/>
         <c:set var="email" value="${user.getEmail()}"/>

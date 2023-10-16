@@ -30,8 +30,8 @@ public class ListUser extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		DataProvider DHMI=new DataProvider();
-		List<user>listUser=DHMI.ListAllUsers();
+		DataProvider dp=new DataProvider();
+		List<user>listUser=dp.ListAllUsers();
 		request.setAttribute("listUser", listUser);
 		RequestDispatcher d1=request.getRequestDispatcher("ManageUserCRUD.jsp");
 		d1.forward(request, response);

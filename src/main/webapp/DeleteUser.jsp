@@ -83,7 +83,7 @@ String userAddress=request.getParameter("Address");
 
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
         
-         <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/DeleteUser" method="post">
+         <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/DeleteUsers" method="post">
 			<br>
 			<br>
             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Delete User Account</h3>
@@ -114,7 +114,7 @@ String userAddress=request.getParameter("Address");
             
             <div class="pt-1 mb-4" style="margin-top:5px">
             <input type="submit" value="Delete" type="button" class="btn btn-info btn-lg btn-block" />
-            <p>Go back to Admin DashBoard<a href="http://localhost:8080/JAVAWebApplication/ManageMenuItemCRUD.jsp" class="link-info">Go back</a></p>
+            <p>Go back to Admin DashBoard<a href="http://localhost:8080/JAVAWebApplication/ManageUserCRUD.jsp" class="link-info">Go back</a></p>
             </div>
 
           </form>

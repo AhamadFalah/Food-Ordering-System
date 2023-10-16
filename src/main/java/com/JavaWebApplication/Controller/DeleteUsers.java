@@ -43,7 +43,7 @@ public class DeleteUsers extends HttpServlet {
 		doGet(request, response);
 		boolean deleted;
 		RequestDispatcher d1;
-		int userId=Integer.parseInt(request.getParameter("userId"));
+		int userId=Integer.parseInt(request.getParameter("id"));
 		user mi=new user();
 		mi.setUserID(userId);
 		DataProvider DHMI=new DataProvider();
