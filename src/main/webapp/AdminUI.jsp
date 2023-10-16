@@ -103,7 +103,7 @@
                     <a href="ManageMenuItemCRUD.jsp" style="text-decoration:none"><button>Manage Menu Items<img src="Images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
                 <div class="option">
-                <a href="CRUD/display.php" style="text-decoration:none"><button>Manage User Profiles <img src="Images/arrow.jpg" alt="Image-Arrow"></button></a>
+                <a href="ManageUserCRUD.jsp" style="text-decoration:none"><button>Manage User Profiles <img src="Images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
                 <div class="option">
                 <a href="CRUD/DisplayPackage.php" style="text-decoration:none"><button>Manage Complaints<img src="Images/arrow.jpg" alt="Image-Arrow"></button></a>
