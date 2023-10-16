@@ -191,7 +191,7 @@ Boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
                         </section>
                         <br><br><br>
                         <center>
-                            <video class="vidd" autoplay loop  controls>
+                            <video class="vidd" autoplay muted loop>
                                 <source src="Video/ramenvideo2.webm" type="video/mp4">
                             </video>
                         </center>

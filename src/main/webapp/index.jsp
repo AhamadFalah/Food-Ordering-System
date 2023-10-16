@@ -767,7 +767,7 @@ body {
     </section>
     <section id="food-menu">
     <center>
-        <video width="1280" height="720" controls>
+        <video width="1280" height="720" autoplay muted loop>
   			<source src="Video/ramen.mp4">
 		</video>
     </center>
