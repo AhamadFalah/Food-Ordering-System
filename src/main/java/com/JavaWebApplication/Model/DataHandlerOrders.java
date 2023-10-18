@@ -69,4 +69,57 @@ public class DataHandlerOrders {
 		}
 		return CustomerOrderList;
 	}
+	
+	
+	//List all the order
+	public List<Payment> ListAllOrders(){
+		List<Payment>CustomerOrderList=new ArrayList<>();
+		MyDB db=new MyDB();
+		Connection con=db.getCon();
+		try {
+			PreparedStatement stmt=con.prepareStatement("SELECT * FROM customer_order");
+			ResultSet rs=stmt.executeQuery();
+			while(rs.next()) {
+				int OrderID=rs.getInt("Order_ID");
+				int CustomerID=rs.getInt("Customer_ID");
+				String customerName=rs.getString("Customer_name");
+				String payment=rs.getString("Payment_Type");
+				double total=rs.getDouble("Total_Price");
+				String transactionDate=rs.getString("Transaction_Date");
+				String orderDetails=rs.getString("Order_Details");
+				Payment p=new Payment();
+				p.setOrderID(OrderID);
+				p.setUserID(CustomerID);
+				p.setCustomerName(customerName);
+				p.setPaymment_type(payment);
+				p.setTotal_Price(total);
+				p.setTransaction_Date(transactionDate);
+				p.setOrder_Details(orderDetails);
+				CustomerOrderList.add(p);
+			}
+			return CustomerOrderList;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return CustomerOrderList;
+	}
+	
+	//Delete Order
+	public boolean DeleteOrder(int orderID) {
+		boolean result=false;
+		MyDB db=new MyDB();
+		Connection con=db.getCon();
+		try {
+			PreparedStatement stmt=con.prepareStatement("DELETE FROM customer_order WHERE Order_ID=?");
+			stmt.setInt(1, orderID);
+			result=stmt.executeUpdate()>0;
+			return result;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+		
+	}
 }

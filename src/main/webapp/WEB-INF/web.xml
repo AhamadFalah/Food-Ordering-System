@@ -306,6 +306,20 @@
   	<servlet-name>DeleteUsers</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.DeleteUsers</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ListAllOrders</display-name>
+  	<servlet-name>ListAllOrders</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ListAllOrders</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>DeleteOrder</display-name>
+  	<servlet-name>DeleteOrder</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.DeleteOrder</servlet-class>
+  </servlet>
  
   
   <servlet-mapping>
@@ -514,6 +528,14 @@
   <servlet-mapping>
   	<servlet-name>DeleteUsers</servlet-name>
   	<url-pattern>/DeleteUsers</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListAllOrders</servlet-name>
+  	<url-pattern>/ListAllOrders</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeleteOrder</servlet-name>
+  	<url-pattern>/DeleteOrder</url-pattern>
   </servlet-mapping>
 
   

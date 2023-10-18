@@ -294,7 +294,7 @@ $(document).ready(function(){
 							<th>email</th>
 							<th>Contact No</th>
 							<th>Address</th>
-							
+							<th>Action</th>
 						</tr>
 					</thead>
 			<tbody>
@@ -326,7 +326,7 @@ $(document).ready(function(){
          	<c:param name="ContactNo" value="${ContactNo}"/>
          	<c:param name="Address" value="${Address}"/>
          </c:url>
-                <td><a href="${Userupdate}" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                <td>
                 <a href="${UserDelete}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                 
             	</td>

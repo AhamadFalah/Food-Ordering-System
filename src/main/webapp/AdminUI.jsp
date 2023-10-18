@@ -100,25 +100,25 @@
         <div class="container-option">
             <div class="container-left">
                 <div class="option">
-                    <a href="ManageMenuItemCRUD.jsp" style="text-decoration:none"><button>Manage Menu Items<img src="Images/arrow.jpg" alt="Image-Arrow"></button></a>
+                    <a href="ManageMenuItemCRUD.jsp" style="text-decoration:none"><button>Manage Menu Items<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
                 <div class="option">
-                <a href="ManageUserCRUD.jsp" style="text-decoration:none"><button>Manage User Profiles <img src="Images/arrow.jpg" alt="Image-Arrow"></button></a>
+                <a href="ManageUserCRUD.jsp" style="text-decoration:none"><button>Manage User Profiles <img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
                 <div class="option">
-                <a href="CRUD/DisplayPackage.php" style="text-decoration:none"><button>Manage Complaints<img src="Images/arrow.jpg" alt="Image-Arrow"></button></a>
+                <a href="CRUD/DisplayPackage.php" style="text-decoration:none"><button>Manage Complaints<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
             </div>
 
             <div class="container-right">
                 <div class="option">
-                <a href="CRUD/CRUD_RESERVATION.php" style="text-decoration:none"><button>Manage Payments<img src="Images/arrow.jpg" alt="Image-Arrow"></button></a>
+                <a href="OrderCRUD.jsp" style="text-decoration:none"><button>Manage Orders<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
                 <div class="option">
-                <a href="ManageInquiryCRUD.jsp" style="text-decoration:none"><button>Manage Inquiries<img src="Images/arrow.jpg" alt="Image-Arrow"></button></a>
+                <a href="ManageInquiryCRUD.jsp" style="text-decoration:none"><button>Manage Inquiries<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
                 <div class="option">
-                <a href="Logout" style="text-decoration:none"><button>Log out<img src="Images/arrow.jpg" alt="Image-Arrow"></button></a>
+                <a href="Logout" style="text-decoration:none"><button>Log out<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
             </div>
     </body>
