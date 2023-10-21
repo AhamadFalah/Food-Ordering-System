@@ -727,7 +727,7 @@ body {
             <div class="img-content">
               <h3>Miso Ramen</h3>
               <a
-                href="https://en.wikipedia.org/wiki/Fruit"
+                href="MenuItemSelection.jsp"
                 class="btn btn-primary"
                 target="blank"
                 >learn more</a
@@ -741,7 +741,7 @@ body {
             <div class="img-content">
               <h3>Shoyu Ramen</h3>
               <a
-                href="https://en.wikipedia.org/wiki/Vegetable"
+                href="MenuItemSelection.jsp"
                 class="btn btn-primary"
                 target="blank"
                 >learn more</a
@@ -755,7 +755,7 @@ body {
             <div class="img-content">
               <h3>Shio Ramen</h3>
               <a
-                href="https://en.wikipedia.org/wiki/Grain"
+                href="MenuItemSelection.jsp"
                 class="btn btn-primary"
                 target="blank"
                 >learn more</a
