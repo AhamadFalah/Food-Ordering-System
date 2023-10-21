@@ -334,6 +334,27 @@
   	<servlet-name>OrderExcel</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.OrderExcel</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>CreateExcelForInquiries</display-name>
+  	<servlet-name>CreateExcelForInquiries</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.CreateExcelForInquiries</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>CreateExcelForMenuItems</display-name>
+  	<servlet-name>CreateExcelForMenuItems</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.CreateExcelForMenuItems</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>CreateExcelForUser</display-name>
+  	<servlet-name>CreateExcelForUser</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.CreateExcelForUser</servlet-class>
+  </servlet>
  
   
   <servlet-mapping>
@@ -558,6 +579,18 @@
   <servlet-mapping>
   	<servlet-name>OrderExcel</servlet-name>
   	<url-pattern>/OrderExcel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CreateExcelForInquiries</servlet-name>
+  	<url-pattern>/CreateExcelForInquiries</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CreateExcelForMenuItems</servlet-name>
+  	<url-pattern>/CreateExcelForMenuItems</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CreateExcelForUser</servlet-name>
+  	<url-pattern>/CreateExcelForUser</url-pattern>
   </servlet-mapping>
 
   

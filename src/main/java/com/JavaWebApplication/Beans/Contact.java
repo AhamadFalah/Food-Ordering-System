@@ -7,7 +7,7 @@ public class Contact {
 	private String inquery;
 	private String Answer;
 	private int UserID;
-	
+	private String date;
 	public Contact(String name, String email, String inquery,String Answer,int UserID) {
 	
 		this.name = name;
@@ -71,4 +71,13 @@ public class Contact {
 	public void setUserID(int userID) {
 		UserID = userID;
 	}
+
+	public String getDate() {
+		return date;
+	}
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+	
 }

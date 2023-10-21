@@ -13,7 +13,9 @@ String profileImage;
 profileImage=(String)session.getAttribute("profileImage");
 request.setAttribute("profileImage",profileImage);%>
 <!--<%=request.getAttribute("profileImage") %>  -->
+<% %>
 <input type="hidden" value="<%=request.getAttribute("update1") %>" id="update_1">
+<input type="hidden" value="<%=request.getAttribute("phone") %>" id="phone">
 <input type="hidden" value="<%=request.getAttribute("update") %>" id="update">
 <input type="hidden" value="<%=request.getAttribute("present") %>" id="present">
     <meta charset="UTF-8">
@@ -46,26 +48,48 @@ request.setAttribute("profileImage",profileImage);%>
             <div class="row no-gutters row-bordered row-border-light">
                 <div class="col-md-3 pt-0">
                     <div class="list-group list-group-flush account-settings-links">
-                        <a class="list-group-item list-group-item-action active" data-toggle="list"
-                            href="#account-general">General</a>
+                       <a class="list-group-item list-group-item-action active" data-toggle="list"
+                            href="#account-info">Account Information</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="#account-general">Update Profile Details</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#account-change-Email">Change Email</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#orders-info">Order history</a>
+                            href="#orders-info">Order History</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#">Complaints</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#inquiry-info">Inquiries</a>
                         <a class="btn btn-primary"
-                            href="Logout">Log out</a>
+                            href="Logout">Log Out</a>
                         <a class="btn btn-primary" style="margin-top:20px;"
-                            href="index.jsp">Home page</a>
+                            href="index.jsp">Home Page</a>
+                        <%if((session.getAttribute("Admin"))!=null){ %>
+                        <a class="btn btn-primary" style="margin-top:20px;"
+                            href="AdminUI.jsp">Admin DashBoard</a>
+                        <%} %>
                     </div>
                 </div>
+                
+                
+                
+                
+                
+
+                
+                
+                
+                
+                
                 <div class="col-md-9">
                     <div class="tab-content">
-                        <div class="tab-pane fade active show" id="account-general">
-       
+                    
+                    
+                    
+                                     
+                    
+                    
+                        <div class="tab-pane fade" id="account-general">
               <!-- Form to update the user general information -->          
             <form action="http://localhost:8080/JAVAWebApplication/UpdateUserProfile" method="post" enctype="multipart/form-data">
             <input type="hidden" value="<%=session.getAttribute("id") %>" name="userID">
@@ -227,110 +251,46 @@ request.setAttribute("profileImage",profileImage);%>
                         
                         
                         
+            <div class="tab-pane fade active show" id="account-info">
+              <!-- Display account information-->          
+            <form action="#" method="post" enctype="multipart/form-data">
+            <input type="hidden" value="<%=session.getAttribute("id") %>" name="userID">
+                  <div class="card-body media align-items-center">
+                                <div class="media-body ml-4">
+                                <div class="customer-photo">
+                                    <img src="<%=request.getAttribute("profileImage")%>" alt="profileImage" height="200px" width="200px"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="border-light m-0">
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control" value="<%=session.getAttribute("name") %>"  name="userName" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Phone number</label>
+                                    <input type="tel" class="form-control" value="<%=session.getAttribute("phoneNo") %>" name="phoneNo" readonly>
+                                </div>
+                               <div class="form-group">
+                                    <label class="form-label">Address</label><br>
+                                    <textarea rows="5" cols="40" name="userAddress" readonly><%=session.getAttribute("address") %></textarea>
+                                </div>
+                            </div>
+                           </form> 
+                           
+                        </div>    
+                        
+                       
+                       
                         
                         
-                        <div class="tab-pane fade" id="account-connections">
-                            <div class="card-body">
-                                <button type="button" class="btn btn-twitter">Connect to
-                                    <strong>Twitter</strong></button>
-                            </div>
-                            <hr class="border-light m-0">
-                            <div class="card-body">
-                                <h5 class="mb-2">
-                                    <a href="javascript:void(0)" class="float-right text-muted text-tiny"><i
-                                            class="ion ion-md-close"></i> Remove</a>
-                                    <i class="ion ion-logo-google text-google"></i>
-                                    You are connected to Google:
-                                </h5>
-                                <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                                    data-cfemail="f9979498818e9c9595b994989095d79a9694">[email&#160;protected]</a>
-                            </div>
-                            <hr class="border-light m-0">
-                            <div class="card-body">
-                                <button type="button" class="btn btn-facebook">Connect to
-                                    <strong>Facebook</strong></button>
-                            </div>
-                            <hr class="border-light m-0">
-                            <div class="card-body">
-                                <button type="button" class="btn btn-instagram">Connect to
-                                    <strong>Instagram</strong></button>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="account-notifications">
-                            <div class="card-body pb-2">
-                                <h6 class="mb-4">Activity</h6>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input" checked>
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Email me when someone comments on my article</span>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input" checked>
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Email me when someone answers on my forum
-                                            thread</span>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input">
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Email me when someone follows me</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <hr class="border-light m-0">
-                            <div class="card-body pb-2">
-                                <h6 class="mb-4">Application</h6>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input" checked>
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">News and announcements</span>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input">
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Weekly product updates</span>
-                                    </label>
-                                </div>
-                                <div class="form-group">
-                                    <label class="switcher">
-                                        <input type="checkbox" class="switcher-input" checked>
-                                        <span class="switcher-indicator">
-                                            <span class="switcher-yes"></span>
-                                            <span class="switcher-no"></span>
-                                        </span>
-                                        <span class="switcher-label">Weekly blog digest</span>
-                                    </label>
-                                </div>
+                        
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -369,6 +329,13 @@ if(present=="error"){
 	swal("Success","Email changed successfully","success");
 }
 
+</script>
+
+<script type="text/javascript">
+let phone=document.getElementById("phone").value;
+if(phone=="error"){
+	swal("Phone number is already present","Please use a different phone number","error");
+}
 </script>
 </body>
 

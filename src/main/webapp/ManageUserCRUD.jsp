@@ -269,7 +269,7 @@ $(document).ready(function(){
 });
 </script>
 </head>
-
+	<input type="hidden" id="OrderExcel" value="<%=request.getAttribute("FileODownload")%>">
 	<input type="hidden" id="status1" value="<%=request.getAttribute("status1")%>">
     <div class="container">
 		<div class="table-responsive">
@@ -281,7 +281,8 @@ $(document).ready(function(){
 						</div>
 						<div class="col-xs-6">
 							
-							<a href="http://localhost:8080/JAVAWebApplication/ListUser" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>List User Account</span></a>	
+							<a href="http://localhost:8080/JAVAWebApplication/ListUser" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>List User Account</span></a>
+					        <a href="http://localhost:8080/JAVAWebApplication/CreateExcelForUser" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Create Excel for Users</span></a>	
 							<a href="AdminUI.jsp" class="btn btn-danger" ><i class="material-icons">&#xE15C;</i> <span>Go Back</span></a>						
 						</div>
 					</div>
@@ -367,6 +368,16 @@ if(status1=="success"){
 }
 else if(status1=="error"){
 	swal("Adding food item failed","Try again","error");
+}
+</script>
+
+<script type="text/javascript">
+let OrderExcel=document.getElementById("OrderExcel").value;
+if(OrderExcel=="success"){
+	swal("Excel File Successfully Created","","success");
+}
+else if(status1=="error"){
+	swal("Delete failed","Try again","error");
 }
 </script>
 </body>

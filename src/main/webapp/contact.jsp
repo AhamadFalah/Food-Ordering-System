@@ -120,7 +120,7 @@
         </div>
         </section>
       <br><br>
-      <div class="googlemap">
+      <div class="googlemap" style="margin-top:-40px;">
       <center>  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.815187508914!2d79.84810437445958!3d6.912688093086815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2596aaa8742d9%3A0xced655398fd4d621!2sSLIIT%20Metropolitan%20Campus!5e0!3m2!1sen!2slk!4v1685965819365!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </center>
         </div>

@@ -291,6 +291,7 @@ $(document).ready(function(){
 <% } else { %>
     <p>The condition is not met, so this content is not displayed.</p>
 <% } %>-->
+	<input type="hidden" id="OrderExcel" value="<%=request.getAttribute("FileODownload")%>">
 	<input type="hidden" id="status1" value="<%=request.getAttribute("status1")%>">
     <div class="container">
 		<div class="table-responsive">
@@ -301,9 +302,10 @@ $(document).ready(function(){
 							<h2>Manage <b>Menu Items</b></h2>
 						</div>
 						<div class="col-xs-6">
+							<a href="http://localhost:8080/JAVAWebApplication/CreateExcelForMenuItems" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Create Excel for Menu Items</span></a>
 							<a href="http://localhost:8080/JAVAWebApplication/NewMenuItem.jsp" data-toggle="modal" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Add New Menu Item</span></a>
-							<a href="http://localhost:8080/JAVAWebApplication/ListMenuItems" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>List Menu Items</span></a>	
-							<a href="AdminUI.jsp" class="btn btn-danger" ><i class="material-icons">&#xE15C;</i> <span>Go Back</span></a>						
+							<a href="http://localhost:8080/JAVAWebApplication/ListMenuItems" class="btn btn-success" style="margin-top:10px;"><i class="material-icons">&#xE147;</i> <span>List Menu Items</span></a>	
+							<a href="AdminUI.jsp" class="btn btn-danger" style="margin-top:10px;"><i class="material-icons">&#xE15C;</i> <span>Go Back</span></a>						
 						</div>
 					</div>
 				</div>
@@ -390,6 +392,16 @@ if(status1=="success"){
 }
 else if(status1=="error"){
 	swal("Adding food item failed","Try again","error");
+}
+</script>
+
+<script type="text/javascript">
+let OrderExcel=document.getElementById("OrderExcel").value;
+if(OrderExcel=="success"){
+	swal("Excel File Successfully Created","","success");
+}
+else if(status1=="error"){
+	swal("Delete failed","Try again","error");
 }
 </script>
 </body>

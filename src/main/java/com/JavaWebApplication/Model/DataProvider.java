@@ -119,6 +119,7 @@ public class DataProvider {
 		return update;
 	}
 	
+	//List all users
 	public List<user> ListAllUsers(){
 		List<user>UserList=new ArrayList<>();
 		MyDB db=new MyDB();
@@ -149,7 +150,7 @@ public class DataProvider {
 		
 	}
 		
-		
+		//Delete user
 		public boolean deleteuser(int userID) {
 			boolean rowDeleted = false;
 			MyDB db=new MyDB();
@@ -164,6 +165,27 @@ public class DataProvider {
 			return rowDeleted;
 			
 		}
+		
+		//Check phone number
+		public ResultSet CheckPhoneNumber(user u1) {
+			ResultSet rs=null;
+			MyDB db=new MyDB();
+			Connection con=db.getCon();
+			try {
+				PreparedStatement stmt=con.prepareStatement("SELECT * FROM signupdata WHERE user_PhoneNumber=?");
+				stmt.setString(1, u1.getPhoneNo());
+				rs=stmt.executeQuery();
+				return rs;
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return rs;
+			
+		}
+		
+		
 		
 		
 	}

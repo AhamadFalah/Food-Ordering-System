@@ -79,6 +79,7 @@ public class Login extends HttpServlet {
 				String password2=rs.getString("user_Password");
 				session.setAttribute("loggedIn",true);
 				if(email2.equals("AdminHarry@gmail.com")&&BCrypt.checkpw(password,password2)){
+					session.setAttribute("Admin", "Admin");
 					d1=request.getRequestDispatcher("AdminUI.jsp");
 				}else if (BCrypt.checkpw(password,password2)){
 					d1=request.getRequestDispatcher("index.jsp");
