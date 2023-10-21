@@ -320,6 +320,20 @@
   	<servlet-name>DeleteOrder</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.DeleteOrder</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>CreateExcelWorkSheet</display-name>
+  	<servlet-name>CreateExcelWorkSheet</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.CreateExcelWorkSheet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>OrderExcel</display-name>
+  	<servlet-name>OrderExcel</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.OrderExcel</servlet-class>
+  </servlet>
  
   
   <servlet-mapping>
@@ -536,6 +550,14 @@
   <servlet-mapping>
   	<servlet-name>DeleteOrder</servlet-name>
   	<url-pattern>/DeleteOrder</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CreateExcelWorkSheet</servlet-name>
+  	<url-pattern>/CreateExcelWorkSheet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>OrderExcel</servlet-name>
+  	<url-pattern>/OrderExcel</url-pattern>
   </servlet-mapping>
 
   

@@ -23,6 +23,18 @@ request.setAttribute("profileImage",profileImage);%>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<style>
+.customer-photo img {
+  display: block;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin: auto;
+}
+
+</style>
 </head>
 
 <body>
@@ -59,7 +71,9 @@ request.setAttribute("profileImage",profileImage);%>
             <input type="hidden" value="<%=session.getAttribute("id") %>" name="userID">
                   <div class="card-body media align-items-center">
                                 <div class="media-body ml-4">
+                                <div class="customer-photo">
                                     <img src="<%=request.getAttribute("profileImage")%>" alt="profileImage" height="200px" width="200px"/>
+                                    </div>
                              <input type="file" name="profileImage">
                                 </div>
                             </div>
