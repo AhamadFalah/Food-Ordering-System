@@ -49,7 +49,7 @@ public class CreateExcelWorkSheet extends HttpServlet {
 		
 		
 	    XSSFWorkbook workbook = new XSSFWorkbook();
-	    XSSFSheet sheet = workbook.createSheet();
+	    XSSFSheet sheet = workbook.createSheet("OrderList");
         
 	    
 	    /*if(sheet.createRow(0) != null) {
@@ -198,11 +198,11 @@ public class CreateExcelWorkSheet extends HttpServlet {
         workbook.write(fileOut);
         //ServletOutputStream fileOutStream = response.getOutputStream();
         //workbook.write(fileOutStream);
-        workbook.close();
-        RequestDispatcher d1=null;
-        d1=request.getRequestDispatcher("OrderCRUD.jsp");
-        request.setAttribute("FileODownload", "success");
-        d1.forward(request, response);
+        //workbook.close();
+        //RequestDispatcher d1=null;
+        //d1=request.getRequestDispatcher("OrderCRUD.jsp");
+        //request.setAttribute("FileODownload", "success");
+        //d1.forward(request, response);
         // Set the response for download
         //response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
         //fileOut.close();
@@ -229,11 +229,14 @@ public class CreateExcelWorkSheet extends HttpServlet {
         
         // Close the file output stream
         //fileOutStream.close();
-        
-        /*response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+        System.out.println("Hello");
+        response.setContentType("application/octet-stream");
         response.setHeader("Content-Disposition", "attachment; filename=data.xlsx");
-        workbook.write(response.getOutputStream());&*/
-  
+        try (FileOutputStream fileOutStream = new FileOutputStream(filePath)) {
+            workbook.write(fileOutStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 	}
 
 	/**
