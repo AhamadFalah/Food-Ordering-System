@@ -57,7 +57,7 @@ request.setAttribute("profileImage",profileImage);%>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#orders-info">Order History</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
-                            href="#">Complaints</a>
+                            href="#review-info">Reviews</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#inquiry-info">Inquiries</a>
                         <a class="btn btn-primary"
@@ -225,7 +225,10 @@ request.setAttribute("profileImage",profileImage);%>
 					</thead>
 			<tbody>
         <c:forEach var="ListOrder" items="${ListOrder}">
-        
+        <c:set var="OrderID" value="${ListOrder.getOrderID()}"/>
+        <c:set var="CustomerID" value="${ListOrder.getUserID()}"/>
+        <c:set var="OrderDetails" value="${ListOrder.getOrder_Details()}"/>
+        <c:set var="TotalPrice" value="${ListOrder.getTotal_Price()}"/>
             <tr>
                 <td>${ListOrder.getCustomerName()}</td>
                 <td>${ListOrder.getPaymment_type()}</td>
@@ -233,12 +236,15 @@ request.setAttribute("profileImage",profileImage);%>
                 <td>${ListOrder.getTransaction_Date()}</td>
                 <td>${ListOrder.getOrder_Details()}</td>
                 
-         <c:url value="#" var="Complaint">
-         
+         <c:url value="http://localhost:8080/JAVAWebApplication/CustomerReview.jsp" var="Review">
+         <c:param name="OrderID" value="${OrderID}"/>
+         <c:param name="customerID" value="${CustomerID}" />
+         <c:param name="orderdetails" value="${OrderDetails}"/>
+         <c:param name="TotalPrice" value="${TotalPrice}"/>
          </c:url>
                 <td>
                 <a href="${Complaint}" >Complaint</a>
-                <a href="${Delete}" >Delete</a>
+                <a href="${Review}" >Review</a>
             	</td>
 			</tr>
 	</c:forEach>
@@ -249,8 +255,9 @@ request.setAttribute("profileImage",profileImage);%>
     </div>
       </div>
                         
-                        
-                        
+            
+             
+                                   
             <div class="tab-pane fade active show" id="account-info">
               <!-- Display account information-->          
             <form action="#" method="post" enctype="multipart/form-data">
@@ -282,7 +289,56 @@ request.setAttribute("profileImage",profileImage);%>
                         </div>    
                         
                        
-                       
+    <div class="tab-pane fade" id="review-info" style="margin-top:10px;">
+    <div class="container">
+		<div class="table-responsive">
+			<div class="table-wrapper">
+				<div class="table-title">
+					<div class="row">
+						<div class="col-xs-6">
+							<h2 style="margin-left:50px;"><b>Reviews</b></h2>
+						</div>
+						<div class="col-xs-6" style="margin-left:600px; margin-bottom:60px;">
+							<a href="<c:url value='http://localhost:8080/JAVAWebApplication/ListAllCustomerReviews'/>?userID=<%=session.getAttribute("id") %>#inquiry-info" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>List All Inquiries</span></a>
+					        <br><br><a href="contact.jsp" class="btn btn-success" style="float:left;"><i class="material-icons">&#xE147;</i> <span>More Questions?</span></a>								
+						</div>
+					</div>
+				</div>
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>Order ID</th>
+							<th>Rating</th>
+							<th>Review</th>
+						</tr>
+					</thead>
+			<tbody>
+        <c:forEach var="ReviewList" items="${ReviewList}">
+        <c:set var="customerID" value="${ReviewList.getCustomer_id()}" />
+        <c:set var="OrderID" value="${ReviewList.getOrder_id()}"/>
+        <c:set var="rating" value="${ReviewList.getRating()}"/>
+        <c:set var="review" value="${ReviewList.getReview()}"/>
+            <tr>
+                <td>${ReviewList.getOrder_id()}</td>
+                <td>${ReviewList.getRating()}</td>
+                <td>${ReviewList.getReview()}</td>
+                
+         <c:url value="http://localhost:8080/JAVAWebApplication/EditReview.jsp" var="EditReview">
+		 <c:param name="customerID" value="${customerID}"/>
+		 <c:param name="orderID" value="${OrderID}"/>
+		 <c:param name="rating" value="${rating}"/>
+		 <c:param name="review" value="${review}"/>
+         </c:url>
+                <td>
+                <a href="${EditReview}" >Edit</a>
+            	</td>
+			</tr>
+	</c:forEach>
+			</tbody>
+				</table>
+			</div>
+		</div>        
+    </div>
                         
                         
                         

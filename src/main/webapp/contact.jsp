@@ -97,14 +97,14 @@
     <header>
         <jsp:include page="header2.jsp" />
     </header>
-    
+    <script src="JS/formValidation.js"></script>
     <input type="hidden" value="<%=request.getAttribute("update") %>" id="update">
     <section id="contact" style="">
       <div class="contact-container container">
         <div class="contact-img" style="margin-top:15px;">
           <img src="images/ContactUs.jpg" alt="contactimage" />
         </div>
-		<form action="http://localhost:8080/JAVAWebApplication/ContactInsert" method="post">
+		<form action="http://localhost:8080/JAVAWebApplication/ContactInsert" method="post" id="ContactForm">
         <div class="form-container" style="margin-top: 10px; width: 100%;">
           <h2>Contact Us</h2>
           <input type="hidden" value="<%=session.getAttribute("id") %>" name="userID">

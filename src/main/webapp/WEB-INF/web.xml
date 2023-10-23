@@ -355,6 +355,27 @@
   	<servlet-name>CreateExcelForUser</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.CreateExcelForUser</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>NewCustomerReview</display-name>
+  	<servlet-name>NewCustomerReview</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.NewCustomerReview</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ListAllCustomerReviews</display-name>
+  	<servlet-name>ListAllCustomerReviews</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ListAllCustomerReviews</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>EditReview</display-name>
+  	<servlet-name>EditReview</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.EditReview</servlet-class>
+  </servlet>
  
   
   <servlet-mapping>
@@ -591,6 +612,18 @@
   <servlet-mapping>
   	<servlet-name>CreateExcelForUser</servlet-name>
   	<url-pattern>/CreateExcelForUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>NewCustomerReview</servlet-name>
+  	<url-pattern>/NewCustomerReview</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListAllCustomerReviews</servlet-name>
+  	<url-pattern>/ListAllCustomerReviews</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditReview</servlet-name>
+  	<url-pattern>/EditReview</url-pattern>
   </servlet-mapping>
 
   
