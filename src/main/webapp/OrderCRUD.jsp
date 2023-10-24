@@ -282,7 +282,7 @@ $(document).ready(function(){
 						<div class="col-xs-6">
 							
 							<a href="http://localhost:8080/JAVAWebApplication/ListAllOrders" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>List All Orders</span></a>
-							<a href="http://localhost:8080/JAVAWebApplication/CreateExcelWorkSheet" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Download Order List</span></a>	
+							<a href="http://localhost:8080/JAVAWebApplication/CreateExcelWorkSheet" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>Create Excel for Order</span></a>	
 							<a href="AdminUI.jsp" class="btn btn-danger" ><i class="material-icons">&#xE15C;</i> <span>Go Back</span></a>						
 						</div>
 					</div>

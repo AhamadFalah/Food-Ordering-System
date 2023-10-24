@@ -10,14 +10,35 @@
  
  }
  
- .container {
-    width: 100%;
+ .page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+
+  .containerr {
+    width: 1140px;
     border: 1px solid #ddd;
     padding: 10px;
     background-color: #F8F7F3;
-    overflow: auto; /* change from 'hidden' to 'auto' */
+    overflow: auto; 
+    max-height: 400px;
+    
+  }
+ 
+ .container {
+    width: 100%;
+    align: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #F8F7F3;
+    overflow: auto; 
     max-height: 400px;
 }
+
+
 
  .message p {
     margin: 0;
@@ -64,7 +85,7 @@
 
    .input-container {
             width: 1140px;
-            height: 50px;
+            height: auto;
             margin: 0 auto;
             background-color: #d;
             border-radius: 5px;
@@ -93,6 +114,9 @@
             font-size: 24px;
             cursor: pointer;
         }
+        
+   .button{
+   float: right;}
    
 </style>
 </head>
@@ -112,9 +136,16 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-   
+
+<div class="page-container">
+  <div class="containerr">
+    <h2><b>Complaint Chat</b></h2>
+	    <div class="button">
+         <button>Go Back</button>
+        </div>
+  </div>
+  </div>
+
     
 <div class="container" >
      <div class="message sender">
@@ -168,7 +199,7 @@
       
 	  </div>
 	  <div class="input-container">
-        <input class="input-box" type="text" placeholder="Type a message...">
+        <input class="input-box" type="text" placeholder="Type a message..." style="word-wrap: break-word; max-width: 100%; height: auto;">
         <button class="send-button">Send</button>
     </div>
 	

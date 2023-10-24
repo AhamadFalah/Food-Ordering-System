@@ -289,11 +289,11 @@ $(document).ready(function(){
 				<table class="table table-striped table-hover">
 					<thead>
 						<tr>
-							<th>UserID</th>
-							<th>User Name</th>
-							<th>email</th>
-							<th>Contact No</th>
-							<th>Address</th>
+							<th>ComplaintID</th>
+							<th>OrderID</th>
+							<th>Complaint Date</th>
+							<th>Complaint Details</th>
+							<th>Status</th>
 							<th>Action</th>
 						</tr>
 					</thead>

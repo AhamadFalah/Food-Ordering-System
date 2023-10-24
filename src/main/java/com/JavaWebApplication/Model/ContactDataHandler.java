@@ -147,4 +147,38 @@ public class ContactDataHandler {
 		return UserList;
 		
 	}
+	
+	public List<Contact> SelectAllInquiriesData(){
+		List<Contact> ListInquiry=new ArrayList<>();
+		MyDB db=new MyDB();
+		Connection con=db.getCon();
+		try {
+			PreparedStatement stmt=con.prepareStatement("SELECT * FROM contact");
+			ResultSet rs=stmt.executeQuery();
+			while(rs.next()) {
+				int ContactID=rs.getInt("Contact_ID");
+				int UserID=rs.getInt("UserID");
+				String Email=rs.getString("Email");
+				String Name=rs.getNString("Name");
+				String Question=rs.getString("Question");
+				String answer=rs.getString("Answer");
+				String date=rs.getString("Date");
+				Contact c1=new Contact();
+				c1.setContactID(ContactID);
+				c1.setUserID(UserID);
+				c1.setEmail(Email);
+				c1.setName(Name);
+				c1.setInquery(Question);
+				c1.setAnswer(answer);
+				c1.setDate(date);
+				ListInquiry.add(c1);
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return ListInquiry;
+		
+	}
+	
 }

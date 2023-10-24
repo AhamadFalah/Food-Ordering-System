@@ -89,25 +89,32 @@ public class UpdateUserProfile extends HttpServlet {
 		u1.setAddress(address);
 		u1.setProfileImage(uploadPath1);
 		DataProvider d1=new DataProvider();
-		rs=d1.CheckEmail(u1);
-		
+		ResultSet rs1=d1.CheckPhoneNumber(u1);
 		update=d1.updateUserProfile(u1, UserId);
-		if(update) {
-			request.setAttribute("update", "success");
-			session.setAttribute("name", u1.getName());
-			session.setAttribute("Email_Address", u1.getEmail());
-			session.setAttribute("phoneNo", u1.getPhoneNo());
-			session.setAttribute("address", u1.getAddress());
-			session.setAttribute("profileImage", u1.getProfileImage());
-					//request.setAttribute("name", u1.getName());
-			d2=request.getRequestDispatcher("userProfilePage.jsp");
-					
+		try {
+			if(rs1.next()) {
+				request.setAttribute("phone", "error");
+				d2=request.getRequestDispatcher("userProfilePage.jsp");
+			}else {
+				if(update) {
+					request.setAttribute("update", "success");
+					session.setAttribute("name", u1.getName());
+					session.setAttribute("Email_Address", u1.getEmail());
+					session.setAttribute("phoneNo", u1.getPhoneNo());
+					session.setAttribute("address", u1.getAddress());
+					session.setAttribute("profileImage", u1.getProfileImage());
+					d2=request.getRequestDispatcher("userProfilePage.jsp");
+							
+				}
+				else {
+					request.setAttribute("update", "error");
+					d2=request.getRequestDispatcher("userProfilePage.jsp");
+				}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		else {
-			request.setAttribute("update", "error");
-			d2=request.getRequestDispatcher("userProfilePage.jsp");
-		}
-
 		d2.forward(request, response);
 		
 	}

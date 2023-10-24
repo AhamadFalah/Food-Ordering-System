@@ -49,12 +49,16 @@ public class DataHandlerOrders {
 			stmt.setInt(1, Customet_ID);
 			ResultSet rs=stmt.executeQuery();
 			while(rs.next()) {
+				int orderID=rs.getInt("Order_ID");
+				int customer=rs.getInt("Customer_ID");
 				String customerName=rs.getString("Customer_name");
 				String payment=rs.getString("Payment_Type");
 				double total=rs.getDouble("Total_Price");
 				String transactionDate=rs.getString("Transaction_Date");
 				String orderDetails=rs.getString("Order_Details");
 				Payment p=new Payment();
+				p.setUserID(customer);
+				p.setOrderID(orderID);
 				p.setCustomerName(customerName);
 				p.setPaymment_type(payment);
 				p.setTotal_Price(total);

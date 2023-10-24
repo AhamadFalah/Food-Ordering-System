@@ -334,6 +334,48 @@
   	<servlet-name>OrderExcel</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.OrderExcel</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>CreateExcelForInquiries</display-name>
+  	<servlet-name>CreateExcelForInquiries</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.CreateExcelForInquiries</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>CreateExcelForMenuItems</display-name>
+  	<servlet-name>CreateExcelForMenuItems</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.CreateExcelForMenuItems</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>CreateExcelForUser</display-name>
+  	<servlet-name>CreateExcelForUser</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.CreateExcelForUser</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>NewCustomerReview</display-name>
+  	<servlet-name>NewCustomerReview</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.NewCustomerReview</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ListAllCustomerReviews</display-name>
+  	<servlet-name>ListAllCustomerReviews</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ListAllCustomerReviews</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>EditReview</display-name>
+  	<servlet-name>EditReview</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.EditReview</servlet-class>
+  </servlet>
  
   
   <servlet-mapping>
@@ -558,6 +600,30 @@
   <servlet-mapping>
   	<servlet-name>OrderExcel</servlet-name>
   	<url-pattern>/OrderExcel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CreateExcelForInquiries</servlet-name>
+  	<url-pattern>/CreateExcelForInquiries</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CreateExcelForMenuItems</servlet-name>
+  	<url-pattern>/CreateExcelForMenuItems</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CreateExcelForUser</servlet-name>
+  	<url-pattern>/CreateExcelForUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>NewCustomerReview</servlet-name>
+  	<url-pattern>/NewCustomerReview</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListAllCustomerReviews</servlet-name>
+  	<url-pattern>/ListAllCustomerReviews</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditReview</servlet-name>
+  	<url-pattern>/EditReview</url-pattern>
   </servlet-mapping>
 
   

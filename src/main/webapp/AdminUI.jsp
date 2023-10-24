@@ -106,7 +106,10 @@
                 <a href="ManageUserCRUD.jsp" style="text-decoration:none"><button>Manage User Profiles <img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
                 <div class="option">
-                <a href="CRUD/DisplayPackage.php" style="text-decoration:none"><button>Manage Complaints<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
+                <a href="#" style="text-decoration:none"><button>Manage Complaints<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
+                </div>
+                <div class="option">
+                <a href="userProfilePage.jsp" style="text-decoration:none"><button>Admin Profile<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
             </div>
 
@@ -119,6 +122,9 @@
                 </div>
                 <div class="option">
                 <a href="Logout" style="text-decoration:none"><button>Log out<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
+                </div>
+                <div class="option">
+                <a href="index.jsp" style="text-decoration:none"><button>Home Page<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
             </div>
     </body>

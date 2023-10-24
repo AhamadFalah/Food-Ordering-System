@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="icon" type="image/png" href="images/ramen78.png"/>
 <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -59,11 +58,12 @@ transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 </head>
 <body>
 <%
-String id=request.getParameter("id");
-String CustomerName=request.getParameter("CustomerName");
-String CustomerEmail=request.getParameter("CustomerEmail");
-String question=request.getParameter("CustomerQuestion");
-String answer=request.getParameter("Answer");
+String id=request.getParameter("orderID");
+String CustomerID=request.getParameter("customerID");
+String rating=request.getParameter("rating");
+String review=request.getParameter("review");
+//String CustomerOrderDetails=request.getParameter("orderdetails");
+//String total=request.getParameter("TotalPrice");
 %>
 <input type="hidden" id="present" value="<%=request.getAttribute("present")%>">
 <input type="hidden" id="update" value="<%=request.getAttribute("update")%>">
@@ -74,37 +74,43 @@ String answer=request.getParameter("Answer");
       <div class="col-sm-6 text-black">
 
         <div class="px-5 ms-xl-4" style="margin-top:-2px" >
-          <center><img alt="Logo png" src="images/logo9.png" width=200px height=200px></center>
         </div>
 
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
         
-         <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/DeleteInquiry" method="post">
+         <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/EditReview" method="post">
 			<br>
 			<br>
-            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Delete Complaint</h3>
-
-			<div class="form-group">
-							<input type="hidden" id="menuid" value="<%=id %>" name="contactID">
-							<label>ComplaintID</label>
-							<input type="text" class="form-control" name="name" value="<%=CustomerName%>" readonly="readonly">
-			  </div>
-			  
+            <h4 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Edit Review</h4>
 			<div class="form-group">
 							<label>OrderID</label>
-							<input type="text" class="form-control" name="question" value="<%=question%>" readonly="readonly">
-			  </div>
-			  	
-			  
-			  <div class="form-group">
-							<label>Status</label>
-							<input type="text" class="form-control" name="answer" value="<%=answer%>" readonly="readonly">
+							<input type="text" class="form-control" name="orderID" value="<%=id%>" readonly="readonly">
 			  </div>
 			  
+			<div class="form-group">
+							<label>CustomerID</label>
+							<input type="text" class="form-control" name="CustomerID" value="<%=CustomerID%>" readonly="readonly">
+			</div>
+			  
+			 <div class="form-group" style="margin-top:20px">
+							<label>Rating</label>
+							<select name="rating">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							</select>
+			  </div>
+			  
+			 <div class="form-group" style="margin-top:20px">
+							<label>Review</label>
+							<textarea name="review" required><%=review %></textarea>
+			  </div>
             
             <div class="pt-1 mb-4" style="margin-top:5px">
-            <input type="submit" value="Delete" type="button" class="btn btn-info btn-lg btn-block" />
-            <p>Go back to Admin DashBoard<a href="http://localhost:8080/JAVAWebApplication/ComplaintManagerr4.jsp" class="link-info">Go back</a></p>
+            <input type="submit" value="Edit" type="button" class="btn btn-info btn-lg btn-block" />
+            <p>Go back to User Profile DashBoard<a href="http://localhost:8080/JAVAWebApplication/userProfilePage.jsp" class="link-info">Go Back</a></p>
             </div>
 
           </form>
@@ -114,7 +120,7 @@ String answer=request.getParameter("Answer");
       </div>
       
       <div class="col-sm-6 px-0 d-none d-sm-block">
-        <img src="images/pp13.jpg"
+        <img src="images/editreview.jpg"
           alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
       </div>
     </div>
@@ -127,10 +133,10 @@ String answer=request.getParameter("Answer");
 <script type="text/javascript">
 let update=document.getElementById("update").value;
 if(update=="success"){
-	swal("Inquiry successfully deleted","","success");
+	swal("Review published","","success");
 }
 else if(update=="error"){
-	swal("Delete request unsuccessfully","","error");
+	swal("Review not scuccessful","Try Again","error");
 }
 
 </script>
@@ -138,7 +144,7 @@ else if(update=="error"){
 <script type="text/javascript">
 let present=document.getElementById("present").value;
 if(present=="error"){
-	swal("Food item already present in the database","Add a different item","error");
+	swal("Review is already submited","please check the review page to edit","error");
 }
 
 </script>
