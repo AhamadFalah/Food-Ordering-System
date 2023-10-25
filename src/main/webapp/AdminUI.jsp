@@ -106,7 +106,7 @@
                 <a href="ManageUserCRUD.jsp" style="text-decoration:none"><button>Manage User Profiles <img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
                 <div class="option">
-                <a href="#" style="text-decoration:none"><button>Manage Complaints<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
+                <a href="ComplaintManage.jsp" style="text-decoration:none"><button>Manage Complaints<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
                 <div class="option">
                 <a href="userProfilePage.jsp" style="text-decoration:none"><button>Admin Profile<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>

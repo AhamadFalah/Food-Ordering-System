@@ -12,7 +12,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ManageUserCRUD</title>
+<title>ManageComplaintCRUD</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -290,44 +290,35 @@ $(document).ready(function(){
 					<thead>
 						<tr>
 							<th>ComplaintID</th>
+							<th>UserID</th>
 							<th>OrderID</th>
 							<th>Complaint Date</th>
-							<th>Complaint Details</th>
 							<th>Status</th>
 							<th>Action</th>
 						</tr>
 					</thead>
 			<tbody>
-        <c:forEach var="user" items="${listUser}">
-        <c:set var="userID" value="${user.getUserID()}"/>
-        <c:set var="name" value="${user.getName()}"/>
-        <c:set var="email" value="${user.getEmail()}"/>
-        <c:set var="ContactNo" value="${user.getPhoneNo()}"/>
-        <c:set var="Address" value="${user.getAddress()}"/>
-        
+        <c:forEach var="ListComplaint" items="${ListComplaint}">
+        <c:set var="ComplaintID" value="${ListComplaint.getComplaintID()}"/>
+        <c:set var="UserID" value="${ListComplaint.getUserID()}"/>
+        <c:set var="OrderID" value="${ListComplaint.getOrderID()}"/>
+        <c:set var="ComplaintDate" value="${ListOrder.getComplaintDate()}"/>
+        <c:set var="Status" value="${ListComplaint.getStatus()}"/>
             <tr>
-                <td>${user.getUserID()}</td>
-                <td>${user.getName()}</td>
-                <td>${user.getEmail()}</td>
-                <td>${user.getPhoneNo()}</td>
-                <td>${user.getAddress()}</td>
+                <td>${ListComplaint.getComplaintID()}</td>
+                <td>${ListComplaint.getUserID()}</td>
+                <td>${ListComplaint.getOrderID()}</td>
+                <td>${ListOrder.getComplaintDate()}</td>
+                <td>${ListComplaint.getStatus()}</td>
                 
-         <c:url value="UpdateUser.jsp" var="Userupdate">
-         	<c:param name="userid" value="${userID}"/>
-         	<c:param name="name" value="${name}"/>
-         	<c:param name="email" value="${email}"/>
-         	<c:param name="ContactNo" value="${ContactNo}"/>
-         	<c:param name="Address" value="${Address}"/>
-         </c:url>
-         <c:url value="DeleteUser.jsp" var="UserDelete">
-         	<c:param name="id" value="${userID}"/>
-         	<c:param name="name" value="${name}"/>
-         	<c:param name="email" value="${email}"/>
-         	<c:param name="ContactNo" value="${ContactNo}"/>
-         	<c:param name="Address" value="${Address}"/>
+         <c:url value="ComplaintClose.jsp" var="Close">
+         	<c:param name="ComplaintID" value="${ComplaintID}"/>
+         	<c:param name="UserID" value="${UserID}"/>
+            <c:param name="OrderID" value="${OrderID}"/>
+            <c:param name="Status" value="${Status}" />
          </c:url>
                 <td>
-                <a href="${UserDelete}" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                <a href="${Close}" class="close">Close</a>
                 
             	</td>
 			</tr>

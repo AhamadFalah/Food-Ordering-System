@@ -4,7 +4,8 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Complaint Chat</title>
+<title>ComplaintCha</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <style>
  .body{
  
@@ -140,9 +141,7 @@
 <div class="page-container">
   <div class="containerr">
     <h2><b>Complaint Chat</b></h2>
-	    <div class="button">
-         <button>Go Back</button>
-        </div>
+	    <a href="AdminUI.jsp" class="btn btn-danger" style="float: right;"><i class="material-icons">&#xE15C;</i> <span>Go Back</span></a>
   </div>
   </div>
 
@@ -199,7 +198,7 @@
       
 	  </div>
 	  <div class="input-container">
-        <input class="input-box" type="text" placeholder="Type a message..." style="word-wrap: break-word; max-width: 100%; height: auto;">
+        <input class="input-box" type="text" placeholder="Type a message...">
         <button class="send-button">Send</button>
     </div>
 	

@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>DeleteComplaint</title>
 <link rel="icon" type="image/png" href="images/ramen78.png"/>
 <link
       rel="stylesheet"
@@ -104,7 +105,7 @@ String answer=request.getParameter("Answer");
             
             <div class="pt-1 mb-4" style="margin-top:5px">
             <input type="submit" value="Delete" type="button" class="btn btn-info btn-lg btn-block" />
-            <p>Go back to Admin DashBoard<a href="http://localhost:8080/JAVAWebApplication/ComplaintManagerr4.jsp" class="link-info">Go back</a></p>
+            <p>Go back to Admin DashBoard<a href="http://localhost:8080/JAVAWebApplication/ComplaintManage.jsp" class="link-info">Go back</a></p>
             </div>
 
           </form>

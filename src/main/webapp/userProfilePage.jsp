@@ -230,6 +230,12 @@ request.setAttribute("profileImage",profileImage);%>
          <c:param name="orderdetails" value="${OrderDetails}"/>
          <c:param name="TotalPrice" value="${TotalPrice}"/>
          </c:url>
+         <c:url value="http://localhost:8080/JAVAWebApplication/ComplaintCreate.jsp" var="Complaint">
+         <c:param name="OrderID" value="${OrderID}"/>
+         <c:param name="customerID" value="${CustomerID}" />
+         <c:param name="orderdetails" value="${OrderDetails}"/>
+         <c:param name="TotalPrice" value="${TotalPrice}"/>
+         </c:url>
                 <td>
                 <a href="${Complaint}" >Complaint</a>
                 <a href="${Review}" >Review</a>
@@ -351,7 +357,6 @@ request.setAttribute("profileImage",profileImage);%>
 							<th>ComplaintID</th>
 							<th>OrderID</th>
 							<th>Complaint Date</th>
-							<th>Complaint Details</th>
 							<th>Status</th>
 							<th>Actions</th>
 						</tr>
@@ -361,24 +366,25 @@ request.setAttribute("profileImage",profileImage);%>
         <c:set var="ComplaintID" value="${ListComplaint.getComplaintID()}"/>
         <c:set var="OrderID" value="${ListComplaint.getOrderID()}"/>
         <c:set var="ComplaintDate" value="${ListOrder.getComplaintDate()}"/>
-        <c:set var="ComplaintDetails" value="${ListOrder.getComplaintDetails()}"/>
         <c:set var="Status" value="${ListComplaint.getStatus()}"/>
             <tr>
                 <td>${ListComplaint.getComplaintID()}</td>
                 <td>${ListComplaint.getOrderID()}</td>
                 <td>${ListOrder.getComplaintDate()}</td>
-                <td>${ListOrder.getComplaintDetails()}</td>
                 <td>${ListComplaint.getStatus()}</td>
                 
-         <c:url value="http://localhost:8080/JAVAWebApplication/CustomerReview.jsp" var="Review">
+         <c:url value="ComplaintView.jsp" var="Chat">
+         <c:param name="ComplaintID" value="${ComplaintID}"/>
          <c:param name="OrderID" value="${OrderID}"/>
-         <c:param name="customerID" value="${CustomerID}" />
-         <c:param name="orderdetails" value="${OrderDetails}"/>
-         <c:param name="TotalPrice" value="${TotalPrice}"/>
+         </c:url>
+         <c:url value="ComplaintDelete.jsp" var="Delete">
+         <c:param name="ComplaintID" value="${ComplaintID}"/>
+         <c:param name="OrderID" value="${OrderID}"/>
+         <c:param name="Status" value="${Status}" />
          </c:url>
                 <td>
-                <a href="${Complaint}" >Chat</a>
-                <a href="${Review}" >Delete</a>
+                <a href="${Chat}" >Chat</a>
+                <a href="${Delete}" >Delete</a>
             	</td>
 			</tr>
 	</c:forEach>
