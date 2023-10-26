@@ -25,18 +25,6 @@ request.setAttribute("profileImage",profileImage);%>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<style>
-.customer-photo img {
-  display: block;
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 50%;
-  margin: auto;
-}
-
-</style>
 </head>
 
 <body>
@@ -58,6 +46,8 @@ request.setAttribute("profileImage",profileImage);%>
                             href="#orders-info">Order History</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#review-info">Reviews</a>
+                        <a class="list-group-item list-group-item-action" data-toggle="list"
+                            href="#complaint-info">Complaints</a>
                         <a class="list-group-item list-group-item-action" data-toggle="list"
                             href="#inquiry-info">Inquiries</a>
                         <a class="btn btn-primary"
@@ -82,22 +72,14 @@ request.setAttribute("profileImage",profileImage);%>
                 
                 
                 <div class="col-md-9">
-                    <div class="tab-content">
-                    
-                    
-                    
-                                     
-                    
-                    
+                    <div class="tab-content">    
                         <div class="tab-pane fade" id="account-general">
               <!-- Form to update the user general information -->          
             <form action="http://localhost:8080/JAVAWebApplication/UpdateUserProfile" method="post" enctype="multipart/form-data">
             <input type="hidden" value="<%=session.getAttribute("id") %>" name="userID">
                   <div class="card-body media align-items-center">
                                 <div class="media-body ml-4">
-                                <div class="customer-photo">
                                     <img src="<%=request.getAttribute("profileImage")%>" alt="profileImage" height="200px" width="200px"/>
-                                    </div>
                              <input type="file" name="profileImage">
                                 </div>
                             </div>
@@ -242,6 +224,12 @@ request.setAttribute("profileImage",profileImage);%>
          <c:param name="orderdetails" value="${OrderDetails}"/>
          <c:param name="TotalPrice" value="${TotalPrice}"/>
          </c:url>
+         <c:url value="http://localhost:8080/JAVAWebApplication/ComplaintCreate.jsp" var="Complaint">
+         <c:param name="OrderID" value="${OrderID}"/>
+         <c:param name="customerID" value="${CustomerID}" />
+         <c:param name="orderdetails" value="${OrderDetails}"/>
+         <c:param name="TotalPrice" value="${TotalPrice}"/>
+         </c:url>
                 <td>
                 <a href="${Complaint}" >Complaint</a>
                 <a href="${Review}" >Review</a>
@@ -339,10 +327,71 @@ request.setAttribute("profileImage",profileImage);%>
 			</div>
 		</div>        
     </div>
+  	</div>
+                                
+    <div class="tab-pane fade" id="complaint-info" style="margin-top:10px;">
+    <div class="container">
+		<div class="table-responsive">
+			<div class="table-wrapper">
+				<div class="table-title">
+					<div class="row">
+						<div class="col-xs-6">
+							<h2 style="margin-left:50px;"><b>Complaints</b></h2>
+						</div>
+						<div class="col-xs-6" style="margin-left:600px; margin-bottom:60px;">
+							<a href="<c:url value='http://localhost:8080/JAVAWebApplication/ListOrderHistory1'/>?userID=<%=session.getAttribute("id") %>#inquiry-info" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>List All Complaints</span></a>
+							<br><br><a href="ComplaintCreate.jsp" class="btn btn-success" style="float:left;"><i class="material-icons">&#xE147;</i> <span>Report A Complaint</span></a>
+					        
+						</div>
+					</div>
+				</div>
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th>ComplaintID</th>
+							<th>OrderID</th>
+							<th>Complaint Date</th>
+							<th>Status</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+			<tbody>
+        <c:forEach var="ListComplaint" items="${ListComplaint}">
+        <c:set var="ComplaintID" value="${ListComplaint.getComplaintID()}"/>
+        <c:set var="OrderID" value="${ListComplaint.getOrderID()}"/>
+        <c:set var="ComplaintDate" value="${ListOrder.getComplaintDate()}"/>
+        <c:set var="Status" value="${ListComplaint.getStatus()}"/>
+            <tr>
+                <td>${ListComplaint.getComplaintID()}</td>
+                <td>${ListComplaint.getOrderID()}</td>
+                <td>${ListOrder.getComplaintDate()}</td>
+                <td>${ListComplaint.getStatus()}</td>
+                
+         <c:url value="ComplaintView.jsp" var="Chat">
+         <c:param name="ComplaintID" value="${ComplaintID}"/>
+         <c:param name="OrderID" value="${OrderID}"/>
+         </c:url>
+         <c:url value="ComplaintDelete.jsp" var="Delete">
+         <c:param name="ComplaintID" value="${ComplaintID}"/>
+         <c:param name="OrderID" value="${OrderID}"/>
+         <c:param name="Status" value="${Status}" />
+         </c:url>
+                <td>
+                <a href="${Chat}" >Chat</a>
+                <a href="${Delete}" >Delete</a>
+            	</td>
+			</tr>
+	</c:forEach>
+			</tbody>
+				</table>
+			</div>
+		</div>        
+    </div>
+      </div>
                         
                         
                         
-                            </div>
+
                         </div>
                     </div>
                 </div>

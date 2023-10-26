@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ReportAComplaint</title>
+<title>CloseComplaint</title>
 <link rel="icon" type="image/png" href="images/ramen78.png"/>
 <link
       rel="stylesheet"
@@ -59,8 +59,15 @@ transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 </style>
 </head>
 <body>
+<%
+String id=request.getParameter("id");
+String CustomerName=request.getParameter("CustomerName");
+String CustomerEmail=request.getParameter("CustomerEmail");
+String question=request.getParameter("CustomerQuestion");
+String answer=request.getParameter("Answer");
+%>
 <input type="hidden" id="present" value="<%=request.getAttribute("present")%>">
-<input type="hidden" id="status1" value="<%=request.getAttribute("status1")%>">
+<input type="hidden" id="update" value="<%=request.getAttribute("update")%>">
 <div>
 <section class="vh-100">
   <div class="container-fluid">
@@ -68,37 +75,41 @@ transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
       <div class="col-sm-6 text-black">
 
         <div class="px-5 ms-xl-4" style="margin-top:-2px" >
-          <center><img alt="Logo png" src="images/ramen78.png" width=300px height=300px></center>
+          <center><img alt="Logo png" src="images/logo9.png" width=200px height=200px></center>
         </div>
 
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-
-          <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/AddMenuItem" method="post">
+        
+         <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/DeleteInquiry" method="post">
 			<br>
 			<br>
-            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Report A Complaint</h3>
+            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Close Complaint</h3>
 
 			<div class="form-group">
-							<label>Menu Item Name</label>
-							<input type="text" class="form-control" name="menuItemName" required>
+							<input type="hidden" id="menuid" value="<%=id %>" name="contactID">
+							<label>ComplaintID</label>
+							<input type="text" class="form-control" name="name" value="<%=CustomerName%>" readonly="readonly">
 			  </div>
+			  <div class="form-group">
+							<label>UserID</label>
+							<input type="text" class="form-control" name="name" value="<%=CustomerName%>" readonly="readonly">
+			  </div>
+			  
 			<div class="form-group">
-							<label>Menu Item price</label>
-							<input type="text" class="form-control" name="price" required>
+							<label>OrderID</label>
+							<input type="text" class="form-control" name="question" value="<%=question%>" readonly="readonly">
 			  </div>
-			<div class="form-group" style="margin-top:10px">
-							<label>Menu Item category</label>
-							<select name="category">
-							<option value="Appetizer">Appetizer</option>
-							<option value="Main course">Main course</option>
-							<option value="Dessert">Dessert</option>
-							<option value="Drink">Drink</option>
-							</select>
-			  </div>	
+			  	
+			  
+			  <div class="form-group">
+							<label>Status</label>
+							<input type="text" class="form-control" name="answer" value="<%=answer%>" readonly="readonly">
+			  </div>
+			  
             
             <div class="pt-1 mb-4" style="margin-top:5px">
-            <input type="submit" value="Add" type="button" class="btn btn-info btn-lg btn-block" />
-            <p>Go back to Admin DashBoard<a href="http://localhost:8080/JAVAWebApplication/ManageMenuItemCRUD.jsp" class="link-info">Go back</a></p>
+            <input type="submit" value="Close" type="button" class="btn btn-info btn-lg btn-block" />
+            <p><a href="http://localhost:8080/JAVAWebApplication/ComplaintManage.jsp" class="link-info">Go back</a> to Admin DashBoard</p>
             </div>
 
           </form>
@@ -108,7 +119,7 @@ transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
       </div>
       
       <div class="col-sm-6 px-0 d-none d-sm-block">
-        <img src="images/p8.jpg"
+        <img src="images/pp13.jpg"
           alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
       </div>
     </div>
@@ -119,9 +130,12 @@ transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 <link rel="stylesheet" href="alert/dist/sweetalert.css">
 
 <script type="text/javascript">
-let status1=document.getElementById("status1").value;
-if(status1=="success"){
-	swal("Food item successfully addeed to the database","Nice","success");
+let update=document.getElementById("update").value;
+if(update=="success"){
+	swal("Inquiry successfully deleted","","success");
+}
+else if(update=="error"){
+	swal("Delete request unsuccessfully","","error");
 }
 
 </script>
