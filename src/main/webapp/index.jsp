@@ -676,7 +676,7 @@ body {
               <li><a href="index.jsp">Home</a></li>
               <li><a href="AboutUs.jsp">About</a></li>
               <li><a href="MenuItemSelection.jsp">Menu</a></li>
-              <li><a href="#testimonials">Testimonial</a></li>
+    		  <li><a href="testamonials.jsp">Reviews</a></li>
               <li><a href="contact.jsp">Contact</a></li>
               <% if (loggedIn != null && loggedIn) { %>
               <li><a href="ShoppingCart.jsp">Cart</a></li>

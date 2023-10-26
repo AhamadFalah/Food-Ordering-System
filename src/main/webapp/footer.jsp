@@ -1,3 +1,8 @@
+<% 
+Boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
+%>
+
+
 
 </div>
 <style>
@@ -166,7 +171,7 @@ svg {
               <ul class="c-nav-tool_list">
 
                 <li class="c-nav-tool_item">
-                  <a href="/pages/help" class="c-link">Help &amp; FAQ</a>
+                  <a href="FAQ.jsp" class="c-link">Help &amp; FAQ</a>
                 </li>
 
                 <li class="c-nav-tool_item">
@@ -179,13 +184,16 @@ svg {
 
                 <li class="c-nav-tool_item">
                   <a href="contact.jsp" class="c-link">Contact</a>
-                </li>
+                </li> 
+   				 <% if (loggedIn != null && loggedIn) { %>
 
-                <li class="c-nav-tool_item">
-                  <a href="/account/login" class="c-link">
+   					 <% } else { %>
+                    <li class="c-nav-tool_item">
+                  <a href="Login.jsp" class="c-link">
                     Login
                   </a>
                 </li>
+   				 <% } %>
               </ul>
             </nav>
 

@@ -1,6 +1,7 @@
 package com.JavaWebApplication.Beans;
 
-public class Review {
+public class Review extends user{
+	private int review_ID;
 	private int order_id;
 	private int customer_id;
 	private int rating;
@@ -29,4 +30,11 @@ public class Review {
 	public void setReview(String review) {
 		this.review = review;
 	}
+	public int getReview_ID() {
+		return review_ID;
+	}
+	public void setReview_ID(int review_ID) {
+		this.review_ID = review_ID;
+	}
+	
 }

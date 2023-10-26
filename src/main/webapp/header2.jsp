@@ -139,7 +139,7 @@ Boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
                 </head> 
 
                     <body>  
-   <img alt="images/logo9.png" src="images/logo9.png" class="log" width=230px height=230px >
+   <img alt="images/ramen78.png" src="images/logo9.png" class="log" width=230px height=230px >
   	<div class ="topnv">
 	  <% if (loggedIn != null && loggedIn) { %>
     <a href="Logout">Logout</a>
@@ -149,7 +149,7 @@ Boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
                   <a href="Login.jsp">Login</a>
     <% } %>
     <a href="contact.jsp">Contact</a>
-    <a href="#testimonials">Testimonial</a>
+    <a href="testamonials.jsp">Reviews</a>
     <a href="MenuItemSelection.jsp">Menu</a>
     <a href="AboutUs.jsp">About</a>
      <a href="index.jsp">Home</a>
