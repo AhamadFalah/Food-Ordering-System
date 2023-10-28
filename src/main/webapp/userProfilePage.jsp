@@ -231,13 +231,11 @@ request.setAttribute("profileImage",profileImage);%>
          <c:param name="TotalPrice" value="${TotalPrice}"/>
          </c:url>
          <c:url value="http://localhost:8080/JAVAWebApplication/ComplaintCreate.jsp" var="Complaint">
-         <c:param name="OrderID" value="${OrderID}"/>
-         <c:param name="customerID" value="${CustomerID}" />
-         <c:param name="orderdetails" value="${OrderDetails}"/>
-         <c:param name="TotalPrice" value="${TotalPrice}"/>
+         <c:param name="orderID" value="${OrderID}"/>
+         <c:param name="userID" value="${CustomerID}"/>
          </c:url>
                 <td>
-                <a href="${Complaint}" >Complaint</a>
+                <a href="${Complaint}" >ReportAComplaint</a>
                 <a href="${Review}" >Review</a>
             	</td>
 			</tr>
@@ -334,7 +332,8 @@ request.setAttribute("profileImage",profileImage);%>
 		</div>        
     </div>
   	</div>
-                                
+  	
+    		<!-- Display Complaints--> >
     <div class="tab-pane fade" id="complaint-info" style="margin-top:10px;">
     <div class="container">
 		<div class="table-responsive">

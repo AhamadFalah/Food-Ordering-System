@@ -376,6 +376,34 @@
   	<servlet-name>EditReview</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.EditReview</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ComplaintCreate</display-name>
+  	<servlet-name>ComplaintCreate</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ComplaintCreate</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ComplaintSCreate</display-name>
+  	<servlet-name>ComplaintSCreate</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ComplaintSCreate</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ComplaintsCreate</display-name>
+  	<servlet-name>ComplaintsCreate</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ComplaintsCreate</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ComplaintList</display-name>
+  	<servlet-name>ComplaintList</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ComplaintList</servlet-class>
+  </servlet>
  
   
   <servlet-mapping>
@@ -624,6 +652,22 @@
   <servlet-mapping>
   	<servlet-name>EditReview</servlet-name>
   	<url-pattern>/EditReview</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ComplaintCreate</servlet-name>
+  	<url-pattern>/ComplaintCreate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ComplaintSCreate</servlet-name>
+  	<url-pattern>/ComplaintSCreate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ComplaintsCreate</servlet-name>
+  	<url-pattern>/ComplaintsCreate</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ComplaintList</servlet-name>
+  	<url-pattern>/ComplaintList</url-pattern>
   </servlet-mapping>
 
   

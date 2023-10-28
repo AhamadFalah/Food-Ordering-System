@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>ReportAComplaint</title>
+<title>Report A Complaint</title>
 <link rel="icon" type="image/png" href="images/ramen78.png"/>
 <link
       rel="stylesheet"
@@ -59,8 +59,13 @@ transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 </style>
 </head>
 <body>
-<input type="hidden" id="present" value="<%=request.getAttribute("present")%>">
-<input type="hidden" id="status1" value="<%=request.getAttribute("status1")%>">
+<%
+String OrderID=request.getParameter("orderID");
+String UserID=request.getParameter("userID");
+%>
+
+<input type="hidden" id="complaintPresent" value="<%=request.getAttribute("complaintPresent")%>">
+<input type="hidden" id="insertStatus" value="<%=request.getAttribute("insertStatus")%>">
 <div>
 <section class="vh-100">
   <div class="container-fluid">
@@ -73,32 +78,42 @@ transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-          <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/AddMenuItem" method="post">
-			<br>
+          <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/ComplaintsCreate" method="post">
 			<br>
             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Report A Complaint</h3>
-
-			<div class="form-group">
-							<label>Menu Item Name</label>
-							<input type="text" class="form-control" name="menuItemName" required>
+							<input type="text" class="form-control" name="userId" value="<%=UserID%>" required>	
+			<div class="form-group">			
+							<label>Order ID</label>
+							<input type="text" class="form-control" name="orderId" value="<%=OrderID%>" required>
 			  </div>
+			    <br>
+	        <div class="form-group">
+	            <label for="reason">Reason</label>
+	            <select name="reason" class="form-control" id="reason" onchange="showReasonInput()">
+	                <option value="Food Quality">Food Quality</option>
+	                <option value="Portion Size">Portion Size</option>
+	                <option value="Delivery and Packaging">Delivery and Packaging</option>
+	                <option value="Pricing">Pricing</option>
+	                <option value="Other">Other</option>
+	            </select>
+	        </div>
+	          <br>
+	        <div id="otherInput" style="display: none;">
+            <div class="form-group">
+                <label for="otherReason">Other Reason : </label>
+                <input type="text" class="form-control" name="otherReason" id="otherReason">
+            </div>
+        </div>
+        <br>
 			<div class="form-group">
-							<label>Menu Item price</label>
-							<input type="text" class="form-control" name="price" required>
+							<label>Complaint Message</label>
+							<input type="text" class="form-control" name="complaintMessage" required>
 			  </div>
-			<div class="form-group" style="margin-top:10px">
-							<label>Menu Item category</label>
-							<select name="category">
-							<option value="Appetizer">Appetizer</option>
-							<option value="Main course">Main course</option>
-							<option value="Dessert">Dessert</option>
-							<option value="Drink">Drink</option>
-							</select>
-			  </div>	
+			
             
             <div class="pt-1 mb-4" style="margin-top:5px">
-            <input type="submit" value="Add" type="button" class="btn btn-info btn-lg btn-block" />
-            <p>Go back to Admin DashBoard<a href="http://localhost:8080/JAVAWebApplication/ManageMenuItemCRUD.jsp" class="link-info">Go back</a></p>
+            <input type="submit" value="Submit" type="button" class="btn btn-info btn-lg btn-block" />
+            <p><a href="http://localhost:8080/JAVAWebApplication/userProfilePage.jsp" class="link-info">Go back</a> to User Profile</p>
             </div>
 
           </form>
@@ -119,20 +134,33 @@ transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 <link rel="stylesheet" href="alert/dist/sweetalert.css">
 
 <script type="text/javascript">
-let status1=document.getElementById("status1").value;
-if(status1=="success"){
-	swal("Food item successfully addeed to the database","Nice","success");
+let insert=document.getElementById("insertStatus").value;
+if(insert=="success"){
+	swal("Complaint Was Successfully Created","Wait Till Customer Services Reply","success");
 }
 
 </script>
 
 <script type="text/javascript">
-let present=document.getElementById("present").value;
+let present=document.getElementById("complaintPresent").value;
 if(present=="error"){
-	swal("Food item already present in the database","Add a different item","error");
+	swal("There Is A Complaint Already For That Order","Please Contact Customer Services","error");
 }
 
 </script>
+
+<script>
+        function showReasonInput() {
+            var category = document.getElementById("reason").value;
+            var reasonInput = document.getElementById("otherInput");
+            
+            if (category === "Other") {
+                reasonInput.style.display = "block";
+            } else {
+                reasonInput.style.display = "none";
+            }
+        }
+    </script>
 
 				
 

@@ -12,7 +12,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ManageComplaintCRUD</title>
+<title>Manage Complaints</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -270,7 +270,7 @@ $(document).ready(function(){
 </script>
 </head>
 
-	<input type="hidden" id="status1" value="<%=request.getAttribute("status1")%>">
+	<input type="hidden" id="closeStatus" value="<%=request.getAttribute("closeStatus")%>">
     <div class="container">
 		<div class="table-responsive">
 			<div class="table-wrapper">
@@ -281,7 +281,7 @@ $(document).ready(function(){
 						</div>
 						<div class="col-xs-6">
 							
-							<a href="http://localhost:8080/JAVAWebApplication/ComplaintLists" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>List User Complaints</span></a>	
+							<a href="http://localhost:8080/JAVAWebApplication/ComplaintList" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>List User Complaints</span></a>	
 							<a href="AdminUI.jsp" class="btn btn-danger" ><i class="material-icons">&#xE15C;</i> <span>Go Back</span></a>						
 						</div>
 					</div>
@@ -290,25 +290,32 @@ $(document).ready(function(){
 					<thead>
 						<tr>
 							<th>ComplaintID</th>
+							<th>Complaint Date</th>
 							<th>UserID</th>
 							<th>OrderID</th>
-							<th>Complaint Date</th>
+							<th>Reason</th>
+							<th>OtherReason</th>
 							<th>Status</th>
 							<th>Action</th>
 						</tr>
 					</thead>
 			<tbody>
         <c:forEach var="ListComplaint" items="${ListComplaint}">
-        <c:set var="ComplaintID" value="${ListComplaint.getComplaintID()}"/>
-        <c:set var="UserID" value="${ListComplaint.getUserID()}"/>
-        <c:set var="OrderID" value="${ListComplaint.getOrderID()}"/>
-        <c:set var="ComplaintDate" value="${ListOrder.getComplaintDate()}"/>
-        <c:set var="Status" value="${ListComplaint.getStatus()}"/>
+        <c:set var="complaintId" value="${ListComplaint.getComplaintId()}"/>
+        <c:set var="userId" value="${ListComplaint.getUserId()}"/>
+        <c:set var="orderId" value="${ListComplaint.getOrderId()}"/>
+        <c:set var="reason" value="${ListComplaint.getReason()}"/>
+        <c:set var="otherReason" value="${ListComplaint.getOtherReason()}"/>
+        <c:set var="timeStamp" value="${ListComplaint.getTimeStamp()}"/>
+        <c:set var="status" value="${ListComplaint.getStatus()}"/>
             <tr>
-                <td>${ListComplaint.getComplaintID()}</td>
-                <td>${ListComplaint.getUserID()}</td>
-                <td>${ListComplaint.getOrderID()}</td>
-                <td>${ListOrder.getComplaintDate()}</td>
+                <td>${ListComplaint.getComplaintId()}</td>
+                <td>${ListComplaint.getComplaintDate()}</td>
+                <td>${ListComplaint.getUserId()}</td>
+                <td>${ListComplaint.getOrderId()}</td>
+                <td>${ListComplaint.getReason()}</td>
+                <td>${ListComplaint.getOtherReason()}</td>
+                <td>${ListComplaint.getComplaintDate()}</td>
                 <td>${ListComplaint.getStatus()}</td>
                 
          <c:url value="ComplaintClose.jsp" var="Close">
@@ -328,17 +335,16 @@ $(document).ready(function(){
 			</div>
 		</div>        
     </div>
-	<!-- Delete Modal HTML -->
-	<div id="deleteEmployeeModal" class="modal fade">
+	<div id="deleteComplaintsModal" class="modal fade">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<form>
 					<div class="modal-header">						
-						<h4 class="modal-title">Delete Menu Item</h4>
+						<h4 class="modal-title">Close Complaint</h4>
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					</div>
 					<div class="modal-body">					
-						<p>Are you sure you want to delete these Records?</p>
+						<p>Are you sure you want to Close this Complaint?</p>
 						<p class="text-warning"><small>This action cannot be undone.</small></p>
 					</div>
 					<div class="modal-footer">
@@ -352,7 +358,7 @@ $(document).ready(function(){
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" href="alert/dist/sweetalert.css">	
 <script type="text/javascript">
-let status1=document.getElementById("status1").value;
+let status1=document.getElementById("closeStatus").value;
 if(status1=="success"){
 	swal("Data insertion successfully","Food item added successfully","success");
 }

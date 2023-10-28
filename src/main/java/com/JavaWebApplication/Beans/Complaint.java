@@ -6,17 +6,24 @@ public class Complaint {
 	private int complaintId;
 	private int userId;
 	private int orderId;
-	private boolean status;
-	private Date timestamp;
+	private String reason;
+	private String otherReason;
+	private String status;
+	private Date timeStamp;
 	
-	public Complaint(int userID, int orderID) {
-		this.setUserId(userID);
-		this.setOrderId(orderID);
+	public Complaint(int userID, int orderID,String reason) {
+		this.userId = userID;
+		this.orderId = orderID;
+		this.reason = reason;
+		this.status = "Pending";
+		this.timeStamp = new Date();
 	}
 	
 public Complaint() {
-		this.setUserId(0);
-		this.setOrderId(0);
+	this.userId = 0;
+	this.orderId = 0;
+	this.reason = "";
+	this.status = "";
 	}
 
 public int getComplaintId() {
@@ -43,20 +50,36 @@ public void setOrderId(int orderId) {
 	this.orderId = orderId;
 }
 
-public boolean isStatus() {
+public Date getTimestamp() {
+	return timeStamp;
+}
+
+public void setTimeStamp(Date timeStamp) {
+	this.timeStamp = timeStamp;
+}
+
+public String getStatus() {
 	return status;
 }
 
-public void setStatus(boolean status) {
+public void setStatus(String status) {
 	this.status = status;
 }
 
-public Date getTimestamp() {
-	return timestamp;
+public String getReason() {
+	return reason;
 }
 
-public void setTimestamp(Date timestamp) {
-	this.timestamp = timestamp;
+public void setReason(String reason) {
+	this.reason = reason;
+}
+
+public String getOtherReason() {
+	return otherReason;
+}
+
+public void setOtherReason(String otherReason) {
+	this.otherReason = otherReason;
 }
 	
 }

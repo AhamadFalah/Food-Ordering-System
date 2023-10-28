@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>DeleteComplaint</title>
+<title>Delete Complaint</title>
 <link rel="icon" type="image/png" href="images/ramen78.png"/>
 <link
       rel="stylesheet"
@@ -60,14 +60,17 @@ transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 </head>
 <body>
 <%
-String id=request.getParameter("id");
-String CustomerName=request.getParameter("CustomerName");
-String CustomerEmail=request.getParameter("CustomerEmail");
-String question=request.getParameter("CustomerQuestion");
-String answer=request.getParameter("Answer");
+String OrderID=request.getParameter("orderID");
+String UserID=request.getParameter("userID");
+String Status=request.getParameter("status");
+String Reason=request.getParameter("reason");
+String OtherReason=request.getParameter("otherReason");
+String Date=request.getParameter("date");
+
 %>
-<input type="hidden" id="present" value="<%=request.getAttribute("present")%>">
-<input type="hidden" id="update" value="<%=request.getAttribute("update")%>">
+
+<input type="hidden" id="complaintNotPresent" value="<%=request.getAttribute("complaintNotPresent")%>">
+<input type="hidden" id="deleteStatus" value="<%=request.getAttribute("deleteStatus")%>">
 <div>
 <section class="vh-100">
   <div class="container-fluid">
@@ -75,37 +78,48 @@ String answer=request.getParameter("Answer");
       <div class="col-sm-6 text-black">
 
         <div class="px-5 ms-xl-4" style="margin-top:-2px" >
-          <center><img alt="Logo png" src="images/logo9.png" width=200px height=200px></center>
+          <center><img alt="Logo png" src="images/ramen78.png" width=300px height=300px></center>
         </div>
 
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
-        
-         <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/DeleteInquiry" method="post">
-			<br>
-			<br>
-            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Delete Complaint</h3>
 
-			<div class="form-group">
-							<input type="hidden" id="menuid" value="<%=id %>" name="contactID">
-							<label>ComplaintID</label>
-							<input type="text" class="form-control" name="name" value="<%=CustomerName%>" readonly="readonly">
+          <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/ComplaintsCreate" method="post">
+            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Delete Complaint</h3>
+			<div class="form-group">			
+							<label>User ID</label>
+							<input type="text" class="form-control" name="userId" value="<%=UserID%>" required readonly>
 			  </div>
-			  
-			<div class="form-group">
-							<label>OrderID</label>
-							<input type="text" class="form-control" name="question" value="<%=question%>" readonly="readonly">
+			    <br>
+			<div class="form-group">			
+							<label>Order ID</label>
+							<input type="text" class="form-control" name="orderId" value="<%=OrderID%>" required readonly>
 			  </div>
-			  	
-			  
-			  <div class="form-group">
-							<label>Status</label>
-							<input type="text" class="form-control" name="answer" value="<%=answer%>" readonly="readonly">
-			  </div>
-			  
+			    <br>
+	        <div class="form-group">
+	            <label for="reason">Reason For Complaint</label>
+				<input type="text" class="form-control" name="reason" value="<%=Reason%>" onchange="showReasonInput()" required readonly>	
+	        </div>
+	          <br>
+	        <div id="otherOutput" style="display: none;">
+            <div class="form-group">
+                <label for="otherReason">Other Reason</label>
+				<input type="text" class="form-control" name="otherReason" value="<%=OtherReason%>" required readonly>	
+            </div>
+        </div>
+        	<div class="form-group">
+	            <label for="reason">Status</label>
+				<input type="text" class="form-control" name="status" value="<%=Status%>" required readonly>	
+	        </div>
+        	<br>
+        	<div class="form-group">
+	            <label for="reason">Date Of Complaint</label>
+				<input type="text" class="form-control" name="date" value="<%=Date%>" required readonly>	
+	        </div>
+			
             
             <div class="pt-1 mb-4" style="margin-top:5px">
             <input type="submit" value="Delete" type="button" class="btn btn-info btn-lg btn-block" />
-            <p>Go back to Admin DashBoard<a href="http://localhost:8080/JAVAWebApplication/ComplaintManage.jsp" class="link-info">Go back</a></p>
+            <p><a href="http://localhost:8080/JAVAWebApplication/userProfilePage.jsp" class="link-info">Go back</a> to Admin HomePage</p>
             </div>
 
           </form>
@@ -115,7 +129,7 @@ String answer=request.getParameter("Answer");
       </div>
       
       <div class="col-sm-6 px-0 d-none d-sm-block">
-        <img src="images/pp13.jpg"
+        <img src="images/p8.jpg"
           alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
       </div>
     </div>
@@ -126,23 +140,33 @@ String answer=request.getParameter("Answer");
 <link rel="stylesheet" href="alert/dist/sweetalert.css">
 
 <script type="text/javascript">
-let update=document.getElementById("update").value;
-if(update=="success"){
-	swal("Inquiry successfully deleted","","success");
-}
-else if(update=="error"){
-	swal("Delete request unsuccessfully","","error");
+let deleted=document.getElementById("deleteStatus").value;
+if(deleted=="success"){
+	swal("Complaint Was Successfully Deleted","","success");
 }
 
 </script>
 
 <script type="text/javascript">
-let present=document.getElementById("present").value;
-if(present=="error"){
-	swal("Food item already present in the database","Add a different item","error");
+let notPresent=document.getElementById("complaintNotPresent").value;
+if(notPresent=="error"){
+	swal("The Complaint Is Deleted Already","","error");
 }
 
 </script>
+
+<script>
+        function showReasonOutput() {
+            var reason = document.getElementById("reason").value;
+            var reasonOutput = document.getElementById("otherOutput");
+            
+            if (reason === "Other") {
+                reasonOutput.style.display = "block";
+            } else {
+                reasonOutput.style.display = "none";
+            }
+        }
+    </script>
 
 				
 
