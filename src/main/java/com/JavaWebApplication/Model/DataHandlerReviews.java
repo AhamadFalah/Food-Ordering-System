@@ -102,5 +102,59 @@ public class DataHandlerReviews {
 		}
 		return result;
 	}
+	
+	//list all the reviews
+	public List<Review> GetAllTheReviewsInReviewPage(){
+		List<Review>ALLCustomerReviews=new ArrayList<>();
+		ResultSet rs;
+		MyDB db=new MyDB();
+		Connection con=db.getCon();
+		try {
+			PreparedStatement stmt=con.prepareStatement("SELECT * from review r,signupdata s WHERE r.Customer_ID=s.userID");
+			rs=stmt.executeQuery();
+			while(rs.next()) {
+				int reviewID=rs.getInt("ReviewID");
+				int OrderID=rs.getInt("r.Order_ID");
+				int CustomerID=rs.getInt("r.Customer_ID");
+				int rating=rs.getInt("r.Rating");
+				String name=rs.getString("s.user_Name");
+				String userProfileImage=rs.getString("s.user_ProfileImage");
+				String review=rs.getString("r.Review");
+				Review r=new Review();
+				r.setReview_ID(reviewID);
+				r.setOrder_id(OrderID);
+				r.setCustomer_id(CustomerID);
+				r.setRating(rating);
+				r.setReview(review);
+				r.setName(name);
+				r.setProfileImage(userProfileImage);
+				ALLCustomerReviews.add(r);
+			}
+			return ALLCustomerReviews;
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return ALLCustomerReviews;
+	}
+	
+	//delete customer reviews
+	public boolean DeleteCustomerReview(int reviewID) {
+		boolean result=false;
+		MyDB db=new MyDB();
+		Connection con= db.getCon();
+		PreparedStatement stmt;
+		try {
+			stmt = con.prepareStatement("DELETE  FROM review WHERE ReviewID=?");
+			stmt.setInt(1, reviewID);
+			result=stmt.executeUpdate()>0;
+			return result;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return result;
+	}
 
 }

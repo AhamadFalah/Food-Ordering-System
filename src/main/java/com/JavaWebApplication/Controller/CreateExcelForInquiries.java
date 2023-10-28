@@ -79,7 +79,7 @@ public class CreateExcelForInquiries extends HttpServlet {
         	datarow.createCell(6).setCellValue(c.getDate());
         	datarowIndex1++;
         }
-        String filePath = "C:/Users/ahmed/OneDrive/Desktop/AdminReports/InquiryData.xlsx";
+        String filePath = "C:/Users/Asiri Jayawardena/Desktop/AdminReports/InquiryData.xlsx";
         FileOutputStream fileOut = new FileOutputStream(filePath);
         workbook.write(fileOut);
         workbook.close();

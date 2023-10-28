@@ -102,15 +102,23 @@
                 <div class="option">
                     <a href="ManageMenuItemCRUD.jsp" style="text-decoration:none"><button>Manage Menu Items<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
+                
                 <div class="option">
                 <a href="ManageUserCRUD.jsp" style="text-decoration:none"><button>Manage User Profiles <img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
+                
                 <div class="option">
-                <a href="ComplaintManage.jsp" style="text-decoration:none"><button>Manage Complaints<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
+                <a href="ReviewCRUD.jsp" style="text-decoration:none"><button>Manage Reviews<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
+                
+                <!--  <div class="option">
+                <a href="ComplaintManage.jsp" style="text-decoration:none"><button>Manage Complaints<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
+                </div>-->
+                
                 <div class="option">
                 <a href="userProfilePage.jsp" style="text-decoration:none"><button>Admin Profile<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
+                
             </div>
 
             <div class="container-right">
