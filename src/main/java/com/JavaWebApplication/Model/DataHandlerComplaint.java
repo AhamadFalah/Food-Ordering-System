@@ -111,8 +111,9 @@ public class DataHandlerComplaint {
 		ResultSet rs=null;
 		Connection con=db.getCon();
 		try {
-			PreparedStatement stmt=con.prepareStatement("SELECT * FROM complaint ORDER BY timestamp DESC");
-			rs=stmt.executeQuery();
+			PreparedStatement ps=con.prepareStatement("SELECT * FROM complaint ORDER BY timestamp DESC");
+			
+			rs=ps.executeQuery();
 			while(rs.next()) {
 				int complaintId=rs.getInt("Complaint_ID");
 				int userId=rs.getInt("User_ID");
@@ -137,6 +138,41 @@ public class DataHandlerComplaint {
 			e.printStackTrace();
 		}
 		return ComplaintList;
+		
+	}
+	
+	//Select the complaint details linked to userId
+	public List<Complaint> ListUserComplaintDetails(int UserID){
+		List<Complaint>UserComplaintList = new ArrayList<>();
+		MyDB db=new MyDB();
+		ResultSet rs=null;
+		Connection con=db.getCon();
+		try {
+			PreparedStatement ps=con.prepareStatement("SELECT * FROM complaint WHERE User_ID=? ;");
+			ps.setInt(1, UserID);
+			rs=ps.executeQuery();
+			while(rs.next()) {
+				int complaintId=rs.getInt("Complaint_ID");
+				int orderId=rs.getInt("Order_ID");
+				String reason = rs.getString("reason");
+				String otherReason=rs.getString("other_reason");
+				String status=rs.getString("Status");
+				Date timeStamp=rs.getDate("TimeStamp");
+				Complaint comp = new Complaint();
+				comp.setComplaintId(complaintId);
+				comp.setOrderId(orderId);
+				comp.setReason(reason);
+				comp.setOtherReason(otherReason);
+				comp.setStatus(status);
+				comp.setTimeStamp(timeStamp);
+				UserComplaintList.add(comp);
+			}
+			return UserComplaintList;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return UserComplaintList;
 		
 	}
 }

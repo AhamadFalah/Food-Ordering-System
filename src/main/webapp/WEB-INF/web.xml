@@ -418,6 +418,13 @@
   	<servlet-name>ComplaintList</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.ComplaintList</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ComplaintUserList</display-name>
+  	<servlet-name>ComplaintUserList</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ComplaintUserList</servlet-class>
+  </servlet>
  
   
   <servlet-mapping>
@@ -690,6 +697,10 @@
   <servlet-mapping>
   	<servlet-name>ComplaintList</servlet-name>
   	<url-pattern>/ComplaintList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ComplaintUserList</servlet-name>
+  	<url-pattern>/ComplaintUserList</url-pattern>
   </servlet-mapping>
 
   

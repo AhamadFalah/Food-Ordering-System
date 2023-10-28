@@ -60,12 +60,12 @@ transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 </head>
 <body>
 <%
-String OrderID=request.getParameter("orderID");
-String UserID=request.getParameter("userID");
-String Status=request.getParameter("status");
-String Reason=request.getParameter("reason");
-String OtherReason=request.getParameter("otherReason");
-String Date=request.getParameter("date");
+String ComplaintID = request.getParameter("ComplaintID");
+String OrderID = request.getParameter("OrderID");
+String Status = request.getParameter("Status");
+String Reason = request.getParameter("Reason");
+String OtherReason = request.getParameter("OtherReason");
+String Date = request.getParameter("Date");
 
 %>
 
@@ -83,12 +83,8 @@ String Date=request.getParameter("date");
 
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-          <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/ComplaintsCreate" method="post">
+          <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/Complaint" method="post">
             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Delete Complaint</h3>
-			<div class="form-group">			
-							<label>User ID</label>
-							<input type="text" class="form-control" name="userId" value="<%=UserID%>" required readonly>
-			  </div>
 			    <br>
 			<div class="form-group">			
 							<label>Order ID</label>
@@ -119,7 +115,7 @@ String Date=request.getParameter("date");
             
             <div class="pt-1 mb-4" style="margin-top:5px">
             <input type="submit" value="Delete" type="button" class="btn btn-info btn-lg btn-block" />
-            <p><a href="http://localhost:8080/JAVAWebApplication/userProfilePage.jsp" class="link-info">Go back</a> to Admin HomePage</p>
+            <p><a href="http://localhost:8080/JAVAWebApplication/userProfilePage.jsp" class="link-info">Go back</a> to User Profile</p>
             </div>
 
           </form>

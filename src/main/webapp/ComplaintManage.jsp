@@ -310,12 +310,11 @@ $(document).ready(function(){
         <c:set var="status" value="${ListComplaint.getStatus()}"/>
             <tr>
                 <td>${ListComplaint.getComplaintId()}</td>
-                <td>${ListComplaint.getComplaintDate()}</td>
+                <td>${ListComplaint.getTimeStamp()}</td>
                 <td>${ListComplaint.getUserId()}</td>
                 <td>${ListComplaint.getOrderId()}</td>
                 <td>${ListComplaint.getReason()}</td>
                 <td>${ListComplaint.getOtherReason()}</td>
-                <td>${ListComplaint.getComplaintDate()}</td>
                 <td>${ListComplaint.getStatus()}</td>
                 
          <c:url value="ComplaintClose.jsp" var="Close">

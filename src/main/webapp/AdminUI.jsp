@@ -129,10 +129,10 @@
                 <a href="ManageInquiryCRUD.jsp" style="text-decoration:none"><button>Manage Inquiries<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
                 <div class="option">
-                <a href="Logout" style="text-decoration:none"><button>Log out<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
+                <a href="ComplaintManage.jsp" style="text-decoration:none"><button>Manage Complaints<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
                 <div class="option">
-                <a href="index.jsp" style="text-decoration:none"><button>Home Page<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
+                <a href="Logout" style="text-decoration:none"><button>Log out<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
             </div>
     </body>

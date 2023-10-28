@@ -81,7 +81,7 @@ String UserID=request.getParameter("userID");
           <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/ComplaintsCreate" method="post">
 			<br>
             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Report A Complaint</h3>
-							<input type="text" class="form-control" name="userId" value="<%=UserID%>" required>	
+							<input type="hidden" class="form-control" name="userId" value="<%=UserID%>" required>	
 			<div class="form-group">			
 							<label>Order ID</label>
 							<input type="text" class="form-control" name="orderId" value="<%=OrderID%>" required>

@@ -344,8 +344,8 @@ request.setAttribute("profileImage",profileImage);%>
 							<h2 style="margin-left:50px;"><b>Complaints</b></h2>
 						</div>
 						<div class="col-xs-6" style="margin-left:600px; margin-bottom:60px;">
-							<a href="<c:url value='http://localhost:8080/JAVAWebApplication/ListOrderHistory1'/>?userID=<%=session.getAttribute("id") %>#inquiry-info" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>List All Complaints</span></a>
-							<br><br><a href="ComplaintCreate.jsp" class="btn btn-success" style="float:left;"><i class="material-icons">&#xE147;</i> <span>Report A Complaint</span></a>
+							<a href="<c:url value='http://localhost:8080/JAVAWebApplication/ComplaintUserList'/>?userID=<%=session.getAttribute("id") %>#complaint-info" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>List All Complaints</span></a>
+							<br><br><a href="contact.jsp" class="btn btn-success" style="float:left;"><i class="material-icons">&#xE147;</i> <span>More Questions?</span></a>
 					        
 						</div>
 					</div>
@@ -353,7 +353,6 @@ request.setAttribute("profileImage",profileImage);%>
 				<table class="table table-striped table-hover">
 					<thead>
 						<tr>
-							<th>ComplaintID</th>
 							<th>OrderID</th>
 							<th>Complaint Date</th>
 							<th>Status</th>
@@ -361,25 +360,29 @@ request.setAttribute("profileImage",profileImage);%>
 						</tr>
 					</thead>
 			<tbody>
-        <c:forEach var="ListComplaint" items="${ListComplaint}">
-        <c:set var="ComplaintID" value="${ListComplaint.getComplaintID()}"/>
-        <c:set var="OrderID" value="${ListComplaint.getOrderID()}"/>
-        <c:set var="ComplaintDate" value="${ListOrder.getComplaintDate()}"/>
-        <c:set var="Status" value="${ListComplaint.getStatus()}"/>
+       <c:forEach var="UserListComplaint" items="${UserListComplaint}">
+        <c:set var="complaintId" value="${UserListComplaint.getComplaintId()}"/>
+        <c:set var="userId" value="${UserListComplaint.getUserId()}"/>
+        <c:set var="orderId" value="${UserListComplaint.getOrderId()}"/>
+        <c:set var="reason" value="${UserListComplaint.getReason()}"/>
+        <c:set var="otherReason" value="${UserListComplaint.getOtherReason()}"/>
+        <c:set var="timeStamp" value="${UserListComplaint.getTimeStamp()}"/>
+        <c:set var="status" value="${UserListComplaint.getStatus()}"/>
             <tr>
-                <td>${ListComplaint.getComplaintID()}</td>
-                <td>${ListComplaint.getOrderID()}</td>
-                <td>${ListOrder.getComplaintDate()}</td>
-                <td>${ListComplaint.getStatus()}</td>
+           		<td>${UserListComplaint.getOrderId()}</td>
+                <td>${UserListComplaint.getTimeStamp()}</td>
+                <td>${UserListComplaint.getStatus()}</td>
                 
          <c:url value="ComplaintView.jsp" var="Chat">
-         <c:param name="ComplaintID" value="${ComplaintID}"/>
-         <c:param name="OrderID" value="${OrderID}"/>
+         <c:param name="ComplaintID" value="${complaintID}"/>
          </c:url>
          <c:url value="ComplaintDelete.jsp" var="Delete">
-         <c:param name="ComplaintID" value="${ComplaintID}"/>
-         <c:param name="OrderID" value="${OrderID}"/>
-         <c:param name="Status" value="${Status}" />
+         <c:param name="ComplaintID" value="${complaintId}"/>
+         <c:param name="OrderID" value="${orderId}"/>#
+         <c:param name="Status" value="${status}"/>
+         <c:param name="Reason" value="${reason}" />
+         <c:param name="OtherReason" value="${otherReason}"/>
+         <c:param name="Date" value="${timeStamp}" />
          </c:url>
                 <td>
                 <a href="${Chat}" >Chat</a>

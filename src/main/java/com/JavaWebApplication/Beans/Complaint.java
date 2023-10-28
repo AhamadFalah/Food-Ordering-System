@@ -50,7 +50,7 @@ public void setOrderId(int orderId) {
 	this.orderId = orderId;
 }
 
-public Date getTimestamp() {
+public Date getTimeStamp() {
 	return timeStamp;
 }
 
