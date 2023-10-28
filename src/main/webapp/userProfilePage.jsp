@@ -333,7 +333,7 @@ request.setAttribute("profileImage",profileImage);%>
     </div>
   	</div>
   	
-    		<!-- Display Complaints--> >
+    		<!-- Display Complaints--> 
     <div class="tab-pane fade" id="complaint-info" style="margin-top:10px;">
     <div class="container">
 		<div class="table-responsive">
