@@ -132,7 +132,7 @@
                 <a href="ComplaintManage.jsp" style="text-decoration:none"><button>Manage Complaints<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
                 <div class="option">
-                <a href="Logout" style="text-decoration:none"><button>Log out<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
+                <a href="http://localhost:8080/JAVAWebApplication/PromoCRUD.jsp" style="text-decoration:none"><button>Manage PromoCodes<img src="images/arrow.jpg" alt="Image-Arrow"></button></a>
                 </div>
             </div>
     </body>

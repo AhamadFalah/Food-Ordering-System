@@ -147,18 +147,11 @@ svg {
               <h4 class="c-nav-tool_title">Menu</h4>
               <ul class="c-nav-tool_list">
                 <li>
-                  <a href="/collections/all" class="c-link">Shop All</a>
+                  <a href="MenuItemSelection.jsp" class="c-link">Food Menu</a>
                 </li>
 
                 <li>
                   <a href="AboutUs.jsp" class="c-link">About Us</a>
-                </li>
-
-                <li>
-                  <a href="/blogs/community" class="c-link">Community</a>
-                </li>
-                <li>
-                  <a href="#" class="c-link">Vibes</a>
                 </li>
               </ul>
             </nav>

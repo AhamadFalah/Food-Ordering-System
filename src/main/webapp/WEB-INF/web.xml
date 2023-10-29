@@ -435,6 +435,48 @@
   <servlet>
   	<description>
   	</description>
+  	<display-name>ListAllPromoCodes</display-name>
+  	<servlet-name>ListAllPromoCodes</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ListAllPromoCodes</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>AddNewPromoCode</display-name>
+  	<servlet-name>AddNewPromoCode</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.AddNewPromoCode</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>DeletePromoCode</display-name>
+  	<servlet-name>DeletePromoCode</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.DeletePromoCode</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ListAllPromoCodeInUser</display-name>
+  	<servlet-name>ListAllPromoCodeInUser</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ListAllPromoCodeInUser</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>PromoCodeCheckCal</display-name>
+  	<servlet-name>PromoCodeCheckCal</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.PromoCodeCheckCal</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>EditPromoCode</display-name>
+  	<servlet-name>EditPromoCode</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.EditPromoCode</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>
+  	</description>
   	<display-name>ComplaintEdit</display-name>
   	<servlet-name>ComplaintEdit</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.ComplaintEdit</servlet-class>
@@ -717,6 +759,30 @@
   <servlet-mapping>
   	<servlet-name>ListAllCustomerReviewsForReviewPage</servlet-name>
   	<url-pattern>/ListAllCustomerReviewsForReviewPage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListAllPromoCodes</servlet-name>
+  	<url-pattern>/ListAllPromoCodes</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddNewPromoCode</servlet-name>
+  	<url-pattern>/AddNewPromoCode</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DeletePromoCode</servlet-name>
+  	<url-pattern>/DeletePromoCode</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ListAllPromoCodeInUser</servlet-name>
+  	<url-pattern>/ListAllPromoCodeInUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>PromoCodeCheckCal</servlet-name>
+  	<url-pattern>/PromoCodeCheckCal</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditPromoCode</servlet-name>
+  	<url-pattern>/EditPromoCode</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>ComplaintEdit</servlet-name>

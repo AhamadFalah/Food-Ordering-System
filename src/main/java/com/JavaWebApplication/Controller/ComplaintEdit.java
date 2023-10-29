@@ -77,16 +77,10 @@ public class ComplaintEdit extends HttpServlet {
 		if(update) {
 			System.out.println("executeUpdate");
 			  request.setAttribute("update", "success");
-			  request.setAttribute("ComplaintID", comp.getComplaintId()); 
-			  request.setAttribute("OrderID", comp.getOrderId());
-			  request.setAttribute("UserID", comp.getUserId());
-			  request.setAttribute("Reason", comp.getReason());
-			  request.setAttribute("OtherReason", comp.getOtherReason());
-			  request.setAttribute("Status", comp.getStatus());
-			  request.setAttribute("Date", sdf.format(comp.getTimeStamp()));
-
+			  
 			  rd=request.getRequestDispatcher("ComplaintEdit.jsp");
 		}else {
+			System.out.println("Update terminated");
 			request.setAttribute("update", "error");
 			rd=request.getRequestDispatcher("ComplaintEdit.jsp");
 		}

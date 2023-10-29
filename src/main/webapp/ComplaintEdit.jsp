@@ -67,15 +67,8 @@ String Status=request.getParameter("Status");
 String Reason=request.getParameter("Reason");
 String OtherReason=request.getParameter("OtherReason");
 String Date=request.getParameter("Date");
-
 %>
 <input type="text" id="update" value="<%=request.getAttribute("update")%>">
-<input type="text" id="" value="<%=ComplaintID%>">
-<input type="text" id="" value="<%=OrderID%>">
-<input type="text" id="" value="<%=UserID%>">
-<input type="text" id="" value="<%=Status%>">
-<input type="text" id="" value="<%=Reason%>">
-<input type="text" id="" value="<%=Date%>">
 
 <div>
 <section class="vh-100">
@@ -108,7 +101,7 @@ String Date=request.getParameter("Date");
 	                <option value="<%=Reason%>"><%=Reason%></option>
 	                <option value="Food Quality">Food Quality</option>
 	                <option value="Portion Size">Portion Size</option>
-	                <option value="Delivery and Packaging">Delivery and Packaging</option>
+	                <option value="Delivery andPackaging">Delivery and Packaging</option>
 	                <option value="Pricing">Pricing</option>
 	                <option value="Other">Other</option>
 	            </select>

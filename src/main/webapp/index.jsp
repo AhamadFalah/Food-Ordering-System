@@ -679,6 +679,7 @@ body {
     		  <li><a href="testamonials.jsp">Reviews</a></li>
               <li><a href="contact.jsp">Contact</a></li>
               <% if (loggedIn != null && loggedIn) { %>
+              <li><a href="promo.jsp">Promotions</a></li>
               <li><a href="ShoppingCart.jsp">Cart</a></li>
          	  <li><a href="userProfilePage.jsp">Profile</a></li>
               <li><a href="Logout">Logout</a></li>
