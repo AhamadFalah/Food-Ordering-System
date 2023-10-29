@@ -145,6 +145,7 @@ Boolean loggedIn = (Boolean) session.getAttribute("loggedIn");
     <a href="Logout">Logout</a>
     <a href="userProfilePage.jsp">Profile</a>
     <a href="ShoppingCart.jsp">Cart</a>
+    <a href="promo.jsp">Promotions</a>
      <% } else { %>
                   <a href="Login.jsp">Login</a>
     <% } %>

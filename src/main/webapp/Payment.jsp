@@ -121,12 +121,13 @@ span.price {
 </head>
 <body>
 
-
+<input type="hidden" id="present" value="<%=request.getAttribute("present") %>"/>
 <div class="row">
   <div class="col-75">
     <div class="container">
       <form action="http://localhost:8080/JAVAWebApplication/AddPayment" method="post">
         <h1 style="align: left;">Total:<%=request.getParameter("total") %></h1>
+        <h1 style="align: left;">Total with discount:<%=request.getAttribute("finalvalue") %></h1>
         <div class="row">
           <div class="col-50">
             <h3>Billing Address</h3>
@@ -189,12 +190,35 @@ span.price {
       <p><a href="#"></a> <span class="price"></span></p>
       <hr>
       <p>Total <span class="price" style="color:black"><b><%=request.getParameter("total") %></b></span></p>
+      <p>Discount <span class="price" style="color:black"><b><%=request.getAttribute("discount") %></b></span></p>
+      <p>Final total <span class="price" style="color:black"><b><%=request.getAttribute("finalvalue") %></b></span></p>
+    </div>
+        <div class="col-25" style="margin-top:25px;">
+    <div class="container">
+      <h4>Promo Code<span class="price" style="color:black"><b></b></span></h4>
+      <form method="post" action="http://localhost:8080/JAVAWebApplication/PromoCodeCheckCal">
+      <input type="hidden" value="<%=session.getAttribute("id") %>" name="UserID">
+      <input type="hidden" value="<%=request.getParameter("ItemList") %>" name="ItemList">
+      <input type="hidden" name="total" value=<%=request.getParameter("total") %> />
+      <input type="text" name="promocode" style="text-transform: uppercase"/>
+      <input type="submit" value="submit" class="btn"/>
+      </form>
     </div>
   </div>
+  </div>
+
 </div>
 
 
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" href="alert/dist/sweetalert.css">	
+<script type="text/javascript">
+let present=document.getElementById("present").value;
+if(present=="error"){
+	swal("Wrong Promo Code","Try again","error");
+	//alert("Wrong promo Code");
+}
+</script>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {

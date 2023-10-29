@@ -302,6 +302,7 @@ request.setAttribute("profileImage",profileImage);%>
 							<th>Order ID</th>
 							<th>Rating</th>
 							<th>Review</th>
+							<th>Action</th>
 						</tr>
 					</thead>
 			<tbody>
@@ -313,8 +314,7 @@ request.setAttribute("profileImage",profileImage);%>
             <tr>
                 <td>${ReviewList.getOrder_id()}</td>
                 <td>${ReviewList.getRating()}</td>
-                <td>${ReviewList.getReview()}</td>
-                
+                <td>${ReviewList.getReview()}</td>   
          <c:url value="http://localhost:8080/JAVAWebApplication/EditReview.jsp" var="EditReview">
 		 <c:param name="customerID" value="${customerID}"/>
 		 <c:param name="orderID" value="${OrderID}"/>
@@ -409,7 +409,7 @@ request.setAttribute("profileImage",profileImage);%>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript">
     </script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <link rel="stylesheet" href="alert/dist/sweetalert.css">
 
 <script type="text/javascript">
