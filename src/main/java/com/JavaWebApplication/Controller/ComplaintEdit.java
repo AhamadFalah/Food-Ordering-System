@@ -76,7 +76,7 @@ public class ComplaintEdit extends HttpServlet {
 		update=DHC.updateComplaint(comp);
 		if(update) {
 			System.out.println("executeUpdate");
-			  request.setAttribute("updateStatus", "success");
+			  request.setAttribute("update", "success");
 			  request.setAttribute("ComplaintID", comp.getComplaintId()); 
 			  request.setAttribute("OrderID", comp.getOrderId());
 			  request.setAttribute("UserID", comp.getUserId());
@@ -87,7 +87,7 @@ public class ComplaintEdit extends HttpServlet {
 
 			  rd=request.getRequestDispatcher("ComplaintEdit.jsp");
 		}else {
-			request.setAttribute("updateStatus", "error");
+			request.setAttribute("update", "error");
 			rd=request.getRequestDispatcher("ComplaintEdit.jsp");
 		}
 		rd.forward(request, response);

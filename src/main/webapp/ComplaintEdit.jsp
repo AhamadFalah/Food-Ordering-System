@@ -69,8 +69,14 @@ String OtherReason=request.getParameter("OtherReason");
 String Date=request.getParameter("Date");
 
 %>
-<input type="hidden" id="present" value="<%=request.getAttribute("present")%>">
-<input type="hidden" id="update" value="<%=request.getAttribute("update")%>">
+<input type="text" id="update" value="<%=request.getAttribute("update")%>">
+<input type="text" id="" value="<%=ComplaintID%>">
+<input type="text" id="" value="<%=OrderID%>">
+<input type="text" id="" value="<%=UserID%>">
+<input type="text" id="" value="<%=Status%>">
+<input type="text" id="" value="<%=Reason%>">
+<input type="text" id="" value="<%=Date%>">
+
 <div>
 <section class="vh-100">
   <div class="container-fluid">
@@ -151,10 +157,10 @@ String Date=request.getParameter("Date");
 <script type="text/javascript">
 let update=document.getElementById("update").value;
 if(update=="success"){
-	swal("Review published","","success");
+	swal("Complaint Updated Successfully","","success");
 }
 else if(update=="error"){
-	swal("Review not scuccessful","Try Again","error");
+	swal("Complaint Update Was Unsuccessful","Try Again","error");
 }
 
 </script>
