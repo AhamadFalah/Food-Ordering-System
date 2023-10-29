@@ -432,6 +432,13 @@
   	<servlet-name>ListAllCustomerReviewsForReviewPage</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.ListAllCustomerReviewsForReviewPage</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ComplaintEdit</display-name>
+  	<servlet-name>ComplaintEdit</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ComplaintEdit</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
   	<url-pattern>/Register</url-pattern>
@@ -710,6 +717,10 @@
   <servlet-mapping>
   	<servlet-name>ListAllCustomerReviewsForReviewPage</servlet-name>
   	<url-pattern>/ListAllCustomerReviewsForReviewPage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ComplaintEdit</servlet-name>
+  	<url-pattern>/ComplaintEdit</url-pattern>
   </servlet-mapping>
 
   

@@ -378,7 +378,16 @@ request.setAttribute("profileImage",profileImage);%>
          </c:url>
          <c:url value="ComplaintDelete.jsp" var="Delete">
          <c:param name="ComplaintID" value="${complaintId}"/>
-         <c:param name="OrderID" value="${orderId}"/>#
+         <c:param name="OrderID" value="${orderId}"/>
+         <c:param name="Status" value="${status}"/>
+         <c:param name="Reason" value="${reason}" />
+         <c:param name="OtherReason" value="${otherReason}"/>
+         <c:param name="Date" value="${timeStamp}" />
+         </c:url>
+         <c:url value="ComplaintEdit.jsp" var="Edit">
+         <c:param name="ComplaintID" value="${complaintId}"/>
+         <c:param name="OrderID" value="${orderId}"/>
+         <c:param name="UserID" value="${userId}"/>
          <c:param name="Status" value="${status}"/>
          <c:param name="Reason" value="${reason}" />
          <c:param name="OtherReason" value="${otherReason}"/>
@@ -386,6 +395,7 @@ request.setAttribute("profileImage",profileImage);%>
          </c:url>
                 <td>
                 <a href="${Chat}" >Chat</a>
+                <a href="${Edit}" >Edit</a>
                 <a href="${Delete}" >Delete</a>
             	</td>
 			</tr>

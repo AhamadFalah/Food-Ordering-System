@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Delete Complaint</title>
+<title>Edit Complaint</title>
 <link rel="icon" type="image/png" href="images/ramen78.png"/>
 <link
       rel="stylesheet"
@@ -60,17 +60,17 @@ transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1);
 </head>
 <body>
 <%
-String OrderID=request.getParameter("orderID");
-String UserID=request.getParameter("userID");
-String Status=request.getParameter("status");
-String Reason=request.getParameter("reason");
-String OtherReason=request.getParameter("otherReason");
-String Date=request.getParameter("date");
+String ComplaintID = request.getParameter("ComplaintID");
+String OrderID=request.getParameter("OrderID");
+String UserID=request.getParameter("UserID");
+String Status=request.getParameter("Status");
+String Reason=request.getParameter("Reason");
+String OtherReason=request.getParameter("OtherReason");
+String Date=request.getParameter("Date");
 
 %>
-
-<input type="hidden" id="complaintNotPresent" value="<%=request.getAttribute("complaintNotPresent")%>">
-<input type="hidden" id="deleteStatus" value="<%=request.getAttribute("deleteStatus")%>">
+<input type="hidden" id="present" value="<%=request.getAttribute("present")%>">
+<input type="hidden" id="update" value="<%=request.getAttribute("update")%>">
 <div>
 <section class="vh-100">
   <div class="container-fluid">
@@ -83,12 +83,12 @@ String Date=request.getParameter("date");
 
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-          <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/ComplaintsCreate" method="post">
+          <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/ComplaintEdit" method="post">
 			<br>
-            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Delete Complaint</h3>
-			<div class="form-group">			
-							<label>User ID</label>
-							<input type="text" class="form-control" name="userId" value="<%=UserID%>" required readonly>
+            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Edit Complaint</h3>
+			<div class="form-group">
+							<input type="hidden" class="form-control" name="complaintId" value="<%=ComplaintID%>" required readonly>			
+							<input type="hidden" class="form-control" name="userId" value="<%=UserID%>" required readonly>
 			  </div>
 			    <br>
 			<div class="form-group">			
@@ -97,14 +97,21 @@ String Date=request.getParameter("date");
 			  </div>
 			    <br>
 	        <div class="form-group">
-	            <label for="reason">Reason For Complaint</label>
-				<input type="text" class="form-control" name="reason" value="<%=Reason%>" onchange="showReasonInput()" required readonly>	
+	            <label for="reason">Reason</label>
+	            <select name="reason" class="form-control" id="reason" onchange="showReasonInput()">
+	                <option value="<%=Reason%>"><%=Reason%></option>
+	                <option value="Food Quality">Food Quality</option>
+	                <option value="Portion Size">Portion Size</option>
+	                <option value="Delivery and Packaging">Delivery and Packaging</option>
+	                <option value="Pricing">Pricing</option>
+	                <option value="Other">Other</option>
+	            </select>
 	        </div>
 	          <br>
-	        <div id="otherOutput" style="display: none;">
+	        <div id="otherInput" style="display: none;">
             <div class="form-group">
-                <label for="otherReason">Other Reason</label>
-				<input type="text" class="form-control" name="otherReason" value="<%=OtherReason%>" required readonly>	
+                <label for="otherReason">Other Reason : </label>
+                <input type="text" class="form-control" name="otherReason" value="<%=OtherReason%>" id="otherReason">
             </div>
         </div>
         	<br>
@@ -121,7 +128,7 @@ String Date=request.getParameter("date");
             
             <div class="pt-1 mb-4" style="margin-top:5px">
             <input type="submit" value="Submit" type="button" class="btn btn-info btn-lg btn-block" />
-            <p><a href="http://localhost:8080/JAVAWebApplication/userProfilePage.jsp" class="link-info">Go back</a> to Admin HomePage</p>
+            <p><a href="http://localhost:8080/JAVAWebApplication/userProfilePage.jsp" class="link-info">Go back</a> to User Profile</p>
             </div>
 
           </form>
@@ -142,30 +149,25 @@ String Date=request.getParameter("date");
 <link rel="stylesheet" href="alert/dist/sweetalert.css">
 
 <script type="text/javascript">
-let deleted=document.getElementById("deleteStatus").value;
-if(deleted=="success"){
-	swal("Complaint Was Successfully Deleted","","success");
+let update=document.getElementById("update").value;
+if(update=="success"){
+	swal("Review published","","success");
 }
-
-</script>
-
-<script type="text/javascript">
-let notPresent=document.getElementById("complaintNotPresent").value;
-if(notPresent=="error"){
-	swal("The Complaint Is Deleted Already","","error");
+else if(update=="error"){
+	swal("Review not scuccessful","Try Again","error");
 }
 
 </script>
 
 <script>
-        function showReasonOutput() {
-            var reason = document.getElementById("reason").value;
-            var reasonOutput = document.getElementById("otherOutput");
+        function showReasonInput() {
+            var category = document.getElementById("reason").value;
+            var reasonInput = document.getElementById("otherInput");
             
-            if (reason === "Other") {
-                reasonOutput.style.display = "block";
+            if (category === "Other") {
+                reasonInput.style.display = "block";
             } else {
-                reasonOutput.style.display = "none";
+                reasonInput.style.display = "none";
             }
         }
     </script>

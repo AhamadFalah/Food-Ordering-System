@@ -69,7 +69,6 @@ String Date = request.getParameter("Date");
 
 %>
 
-<input type="hidden" id="complaintNotPresent" value="<%=request.getAttribute("complaintNotPresent")%>">
 <input type="hidden" id="deleteStatus" value="<%=request.getAttribute("deleteStatus")%>">
 <div>
 <section class="vh-100">
@@ -83,9 +82,10 @@ String Date = request.getParameter("Date");
 
         <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 
-          <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/Complaint" method="post">
+          <form style="width: 23rem;" action="http://localhost:8080/JAVAWebApplication/ComplaintDelete" method="post">
             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Delete Complaint</h3>
 			    <br>
+			    <input type="hidden" class="form-control" name="complaintID" value="<%=ComplaintID%>" required readonly>
 			<div class="form-group">			
 							<label>Order ID</label>
 							<input type="text" class="form-control" name="orderId" value="<%=OrderID%>" required readonly>
@@ -139,17 +139,13 @@ String Date = request.getParameter("Date");
 let deleted=document.getElementById("deleteStatus").value;
 if(deleted=="success"){
 	swal("Complaint Was Successfully Deleted","","success");
+}else if(deleted=="error"){
+	swal("Complaint Deletion was Unsuccessful","Please Contact Customer Services","error");	
 }
 
 </script>
 
-<script type="text/javascript">
-let notPresent=document.getElementById("complaintNotPresent").value;
-if(notPresent=="error"){
-	swal("The Complaint Is Deleted Already","","error");
-}
 
-</script>
 
 <script>
         function showReasonOutput() {
