@@ -104,7 +104,9 @@ String UserID=request.getParameter("userID");
                 <input type="text" class="form-control" name="otherReason" id="otherReason">
             </div>
         </div>
-         
+        <br>
+			
+            
             <div class="pt-1 mb-4" style="margin-top:5px">
             <input type="submit" value="Submit" type="button" class="btn btn-info btn-lg btn-block" />
             <p><a href="http://localhost:8080/JAVAWebApplication/userProfilePage.jsp" class="link-info">Go back</a> to User Profile</p>

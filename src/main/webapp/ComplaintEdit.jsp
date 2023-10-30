@@ -68,7 +68,7 @@ String Reason=request.getParameter("Reason");
 String OtherReason=request.getParameter("OtherReason");
 String Date=request.getParameter("Date");
 %>
-<input type="hidden" id="update" value="<%=request.getAttribute("update")%>">
+<input type="text" id="update" value="<%=request.getAttribute("update")%>">
 
 <div>
 <section class="vh-100">
