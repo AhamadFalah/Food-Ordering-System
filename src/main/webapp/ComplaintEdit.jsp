@@ -68,7 +68,7 @@ String Reason=request.getParameter("Reason");
 String OtherReason=request.getParameter("OtherReason");
 String Date=request.getParameter("Date");
 %>
-<input type="text" id="update" value="<%=request.getAttribute("update")%>">
+<input type="hidden" id="update" value="<%=request.getAttribute("update")%>">
 
 <div>
 <section class="vh-100">
@@ -107,7 +107,7 @@ String Date=request.getParameter("Date");
 	            </select>
 	        </div>
 	          <br>
-	        <div id="otherInput" style="display: none;">
+	        <div id="otherReasonInput" style="display: none;">
             <div class="form-group">
                 <label for="otherReason">Other Reason : </label>
                 <input type="text" class="form-control" name="otherReason" value="<%=OtherReason%>" id="otherReason">
@@ -159,9 +159,25 @@ else if(update=="error"){
 </script>
 
 <script>
+  function otherReasonInput() {
+    var reasonValue = '<%= Reason %>'; // Get the value of the "Reason" parameter
+    var otherReasonInput = document.getElementById("otherReasonInput");
+
+    if (reasonValue === "Other") {
+    	otherReasonInput.style.display = "block"; // Show the div
+    } else {
+    	otherReasonInput.style.display = "none"; // Hide the div
+    }
+  }
+
+  // Call the function to initialize the visibility based on the initial value
+  otherReasonInput()
+</script>
+
+<script>
         function showReasonInput() {
             var category = document.getElementById("reason").value;
-            var reasonInput = document.getElementById("otherInput");
+            var reasonInput = document.getElementById("otherReasonInput");
             
             if (category === "Other") {
                 reasonInput.style.display = "block";

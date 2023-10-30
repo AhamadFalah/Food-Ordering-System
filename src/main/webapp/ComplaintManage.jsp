@@ -318,10 +318,13 @@ $(document).ready(function(){
                 <td>${ListComplaint.getStatus()}</td>
                 
          <c:url value="ComplaintClose.jsp" var="Close">
-         	<c:param name="ComplaintID" value="${ComplaintID}"/>
-         	<c:param name="UserID" value="${UserID}"/>
-            <c:param name="OrderID" value="${OrderID}"/>
-            <c:param name="Status" value="${Status}" />
+         	 <c:param name="ComplaintID" value="${complaintId}"/>
+	         <c:param name="OrderID" value="${orderId}"/>
+	         <c:param name="UserID" value="${userId}"/>
+	         <c:param name="Status" value="${status}"/>
+	         <c:param name="Reason" value="${reason}" />
+	         <c:param name="OtherReason" value="${otherReason}"/>
+	         <c:param name="Date" value="${timeStamp}" />
          </c:url>
                 <td>
                 <a href="${Close}" class="close">Close</a>

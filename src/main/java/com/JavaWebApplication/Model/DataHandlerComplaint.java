@@ -54,8 +54,8 @@ public class DataHandlerComplaint {
 	}
 	
 	//Update Complaint Details In The Database
-	public boolean updateComplaint(Complaint comp) {
-		boolean update=false;
+	public boolean editComplaint(Complaint comp) {
+		boolean edit=false;
 		MyDB db=new MyDB();
 		Connection con=db.getCon();
 		try {
@@ -63,13 +63,30 @@ public class DataHandlerComplaint {
 			ps.setString(1, comp.getReason());
 			ps.setString(2, comp.getOtherReason());
 			ps.setInt(3, comp.getComplaintId());
-			update=ps.executeUpdate()>0;
-			return update;
+			edit=ps.executeUpdate()>0;
+			return edit;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return update;
+		return edit;
 	}
+	
+	//Update Complaint Status In The Database
+		public boolean updateComplaintStatus(Complaint comp) {
+			boolean updateStatus=false;
+			MyDB db=new MyDB();
+			Connection con=db.getCon();
+			try {
+				PreparedStatement ps=con.prepareStatement("UPDATE complaint SET status = ? WHERE Complaint_ID = ?");
+				ps.setString(1, comp.getStatus());
+				ps.setInt(2, comp.getComplaintId());
+				updateStatus=ps.executeUpdate()>0;
+				return updateStatus;
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return updateStatus;
+		}
 
 	//Delete Complaint Details In The Database
 	public boolean DeleteUserComplaint(int ComplaintID) {

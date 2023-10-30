@@ -394,7 +394,6 @@ request.setAttribute("profileImage",profileImage);%>
          <c:param name="Date" value="${timeStamp}" />
          </c:url>
                 <td>
-                <a href="${Chat}" >Chat</a>
                 <a href="${Edit}" >Edit</a>
                 <a href="${Delete}" >Delete</a>
             	</td>

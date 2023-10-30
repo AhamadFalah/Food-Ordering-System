@@ -481,6 +481,13 @@
   	<servlet-name>ComplaintEdit</servlet-name>
   	<servlet-class>com.JavaWebApplication.Controller.ComplaintEdit</servlet-class>
   </servlet>
+  <servlet>
+  	<description>
+  	</description>
+  	<display-name>ComplaintClose</display-name>
+  	<servlet-name>ComplaintClose</servlet-name>
+  	<servlet-class>com.JavaWebApplication.Controller.ComplaintClose</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>Register</servlet-name>
   	<url-pattern>/Register</url-pattern>
@@ -787,6 +794,10 @@
   <servlet-mapping>
   	<servlet-name>ComplaintEdit</servlet-name>
   	<url-pattern>/ComplaintEdit</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ComplaintClose</servlet-name>
+  	<url-pattern>/ComplaintClose</url-pattern>
   </servlet-mapping>
 
   
