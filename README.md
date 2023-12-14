@@ -27,6 +27,3 @@ Feel free to contribute to the project by submitting issues or pull requests. If
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
-```
-
-Make sure to replace placeholders like `YourJavaClasses.class` with the actual names of your Java classes and update the license information as needed. This `README.md` provides a brief overview of the project, its structure, technologies used, and instructions for running and contributing to the project. Adjust it according to your project's specifics.
