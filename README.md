@@ -1,6 +1,6 @@
 # Food Ordering System
 
-Welcome to the Food Ordering System project! This web application is designed for an IWT project for Year 2 Semester 1. It provides a platform for users to explore a variety of ramen options, place orders, and interact with the system.
+Welcome to the Food Ordering System project! This web application is designed for an OOP project for Year 2 Semester 1. It provides a platform for users to explore a variety of ramen options, place orders, and interact with the system.
 
 ## Technologies Used
 
